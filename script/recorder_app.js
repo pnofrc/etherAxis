@@ -136,12 +136,13 @@ function createDownloadLink(blob) {
         fd.append("audio_data", blob, filename);
         xhr.open("POST", "./script/upload.php", true);
         xhr.send(fd);
+        $("#arch").fadeIn();
 
 
 
 
 
-        window.location.href = './ether_archive/'
+
 
     })
     li.appendChild(document.createTextNode(" ")) //add a space in between

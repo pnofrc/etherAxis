@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style_rec.css">
     <script src="./script/cookie.js"></script>
+    <script src="./script/jquery-3.6.0.min.js"></script>
 
 </head>
 
@@ -24,21 +25,29 @@
     <ol id="recordingsList"></ol>
 
     <br><br>
-    <!-- <a href="./ether_archive/">Now you can access to the archive</a> -->
+    <!-- <a id="arch" onclick="next()">Now you can access to the archive</a> -->
 
-    <button onclick=next()>Next</button>
+    <button id="arch" onclick=next()>Next</button>
 
 
     <script src="./script/recorder.js"></script>
     <script src="./script/recorder_app.js"></script>
     <script src="app.js"></script>
-    <script src="./script/speech.js"></script>
+    <!-- <script src="./script/speech.js"></script> -->
     <script>
         checkCheck(2)
+        routing()
+
+        let cookie = Cookies.get();
+        let value = Object.values(cookie)[0]
+        console.log(value)
+        if (value == 'archive') {
+            window.location.href = 'archive.php'
+        }
 
         function next() {
-            Cookies.set(2, 'quest')
-            routing()
+            Cookies.set(2, 'archive')
+            window.location.href = 'archive.php'
         }
     </script>
 </body>

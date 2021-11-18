@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+a {
+    line-height: 30px;
+}
+
+span {
+    /* position: relative; */
+    flex-direction: row;
+    /* width: 46%; */
+}
+
+.fs {
+    padding: 10px;
+}
+
+.lista {
+    margin: 40px 0;
+}
+
+.lista span {
+    position: absolute;
+}
+
+.lista span:nth-child(2) {
+    right: 0;
+}
+
+button {
+    position: fixed;
+    bottom: 2px;
+    width: 100%;
+}

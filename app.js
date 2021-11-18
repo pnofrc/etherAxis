@@ -6,18 +6,22 @@ function routing() {
         var current = Object.keys(cookie)[0].toString()
         var value = Object.values(cookie)[0].toString()
         var route
-        if (value == "compass") {
+        if (value == "compas") {
             var route = value
         } else if (value == "quest") {
             var route = value
         } else {
             var route = current
         }
+        window.location.href = route + '.html'
 
+    } else {
         window.location.href = route + '.html'
 
     }
+
 }
+
 
 function checkCookie() {
     let cookie = Cookies.get();

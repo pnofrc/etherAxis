@@ -107,3 +107,7 @@
     #recordingsList {
         max-width: 28em;
     }
+    
+    #arch {
+        display: none;
+    }

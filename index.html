@@ -9,25 +9,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <script src="./script/cookie.js"></script>
+    <script src="./script/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
     <div class="intro">
         <h1>Ether Axis</h1>
         <p>Welcome to ....</p>
-        <button onclick="next()">Start</button>
+        <button onclick="quest()">Start</button>
 
     </div>
 
+    <div id="questIndex">
+        <div class="container"></div>
+        <div><button onclick="next()"></button></div>
+    </div>
 
 
     <script src="app.js"></script>
+    <script src="./script/dictio.js"></script>
     <script defer async>
         routing();
 
-        function next() {
+        function quest() {
+            $("#questIndex").slideDown()
+            document.getElementsByClassName("container")[0].innerHTML += `<p>${qq[4]}</p><br>`
+            q = quests[4]
+            document.getElementsByClassName("container")[0].innerHTML += `<button onclick="choose(0)">${q[0]}</button><br>`
+            document.getElementsByClassName("container")[0].innerHTML += `<button onclick="choose(1)">${q[1]}</button><br>`
+
+
+
+        }
+
+        function next(x) {
+            localStorage.setItem(5, x)
+
             Cookies.set('0', 'compass')
-            window.location.href = "compass.html"
+
+            routing();
         }
     </script>
 

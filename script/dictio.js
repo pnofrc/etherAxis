@@ -1,69 +1,43 @@
 var coord = [
-    [00, 22],
-    [33, 44],
-    [],
+    [51.92498909590063, 4.474555854520307, 10],
+    [51.9244038691697, 4.472863218470833, 1],
+    [51.92428120851618, 4.475536640673075, 8],
     [],
     []
 ];
 
+var qq = [
+    'What ?',
+    'What?',
+    'What?',
+    'What?',
+    'What?',
+];
+
+
+
 var quests = [
-    ['blabla', 'blabla', 'blabla', 'blabla'],
-    ['blabla', 'blabla', 'blabla', 'blabla'],
-    ['blabla', 'blabla', 'blabla', 'blabla'],
-    ['blabla', 'blabla', 'blabla', 'blabla'],
-    ['blabla', 'blabla', 'blabla', 'blabla'],
+
+    ['blabla', 'blabla'], //smartshop 1
+    ['blabla', 'blabla'], //training 2
+    ['blabla', 'blabla'], //water 3
+    ['blabla', 'blabla'], //mushroom 4
+    ['blabla', 'blabla'], //sickhouse 5
+
 ]
 
 var text = [
-    'aeaea gimme mushroom eaeaea',
+    'Enter the rainbow codeword to receive your objective',
+    'Navigator! draw a line between all uneven numbers on the map, what do you see.',
+    'Connector! Do the magic move.',
+    'Scientist! Read a book.',
     ''
 ]
 
 var answers = [
-    ['blabla', 'bfdgvbla', 'blddbla', 'blgsdla'],
-    ['fra', 'bldfbla', 'brsfvla', 'blaebrfbea'],
-    ['bdslabla', 'blasdvsdfbla', 'blablsfbsfbvsfa', 'blabla'],
-    ['bladsvbdbvsbla', 'blsdvsdvabla', 'bsdvsdslabla', 'blabfsvsdla'],
-    ['blabldbvsda', 'blabdfvbdla', 'blabladv', 'bladvdbla'],
+    ['When I was born I never cried', 'My mother is an A.I.'],
+    ['in a world of strong connection', 'I spent my days jumping from island to island'],
+    ['In the horizon I see dust', 'The electronic whirring is nauseating'],
+    ['For now I am a mere node in the network', 'But never once I felt the static'],
+    ['In endless reconfigurations', 'so once again I trace the light.'],
 ]
-
-var text
-var quest
-var answers
-
-
-
-let one = {
-    coord: [143, 132],
-    text: 'diocane',
-    quest: 'come si chiama la nonna?',
-    answers: []
-}
-
-let two = {
-    coord: [],
-    text: 'diocane',
-    quest: 'come si chiama la nonna?',
-    answers: []
-}
-
-let three = {
-    coord: [],
-    text: 'diocane',
-    quest: 'come si chiama la nonna?',
-    answers: []
-}
-
-let four = {
-    coord: [],
-    text: 'diocane',
-    quest: 'come si chiama la nonna?',
-    answers: []
-}
-
-let end = {
-    coord: [],
-    text: 'diocane',
-    quest: 'come si chiama la nonna?',
-    answers: []
-}
