@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>etherAxis</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
 
-                
-        <script src="./script/dictio.js"></script>
-        <script>console.log(one.quest)</script>
-    </body>
+<head>
+    <meta charset="utf-8">
+    <title>etherAxis</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script/cookie.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        HELLO u are at the training station session
+
+        <button onclick="next()">Next</button>
+    </div>
+    <script src="app.js"></script>
+    <script>
+        checkCheck(1)
+
+        function next() {
+            Cookies.set(1, 'quest')
+            routing()
+        }
+    </script>
+</body>
+
 </html>

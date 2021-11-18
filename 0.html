@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>etherAxis</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script/cookie.js"></script>
+    <script src="./script/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <div id="instruction">
+        HELLOO beaugufaifaoful people Did you do this and this?
+        <button onclick="next()">yes, forward</button>
+    </div>
+    <div class="container">
+        <div>
+            <p id="text"></p>
+        </div>
+        <input type="text" placeholder="Type " id="input">
+        <button type="button" onclick="getInputValue();">check</button>
+    </div>
+
+    <script src="./script/dictio.js"></script>
+    <script src="./app.js"></script>
+
+    <script>
+        checkCheck(0);
+
+        function next() {
+            Cookies.set(0, 'quest')
+            routing()
+        }
+
+        let cookie = Cookies.get();
+        let value = Object.values(cookie)[0]
+        console.log(value)
+        if (value == 'intermezzo') {
+            $('#instruction').css('display', 'block')
+        }
+        document.getElementById("text").innerHTML = text[0]
+
+        function getInputValue() {
+            let inputVal = document.getElementById("input").value;
+            if (inputVal == 'cucchiaio di legno di fungo mi immergo') {
+                Cookies.set(0, 'intermezzo');
+                $('#instruction').slideDown()
+
+            }
+        }
+    </script>
+</body>
+
+</html>

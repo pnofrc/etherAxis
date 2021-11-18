@@ -8,13 +8,26 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <script src="./script/p5.js"></script>
-    <script src="./script/p5.dom.min.js"></script>
-    <script src="./script/p5.ble.js"></script>
+    <script src="./script/cookie.js"></script>
+
 </head>
 
 <body>
-    <script src="./script/ble.js" defer async></script>
+
+    <div class="container">
+        <ul id="end"></ul>
+    </div>
+
+    <script src="./script/dictio.js"></script>
+    <script src="./app.js"></script>
+
+    <script>
+        checkCheck(4)
+        for (let x = 0; x < 4; x++) {
+            let i = localStorage.getItem(x);
+            document.getElementById("end").innerHTML += '<li>' + answers[x][i] + '</li>'
+        }
+    </script>
 </body>
 
 </html>

@@ -1,7 +1,30 @@
+:root {
+    --first: rgb(0, 0, 255);
+    --second: rgb(255, 136, 0);
+}
+
 body {
+    width: 100%;
+    height: 95vh;
+    /* border: solid; */
+    /* width: 100%; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.intro {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    justify-content: space-around;
+    /* border: solid red 2px; */
+    height: 100%;
+}
+
+.intro h1 {
+    -webkit-text-stroke: 1px var(--first);
+    color: rgba(0, 0, 0, 0.05);
+    font-size: 10vh;
+    /* color: ); */
 }
 
 .compass {
@@ -50,4 +73,25 @@ body {
 
 .start-btn {
     margin-bottom: auto;
+}
+
+#instruction {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    background-color: var(--second);
+    color: white;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    list-style: none;
+    width: 100%;
+    height: 100vh;
 }

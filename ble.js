@@ -3,12 +3,23 @@ let myCharacteristic;
 let myValue = 0;
 let myBLE;
 
+let x, y;
+
+function next() {
+    Cookies.set('3', 'quest')
+    routing()
+}
+
 function setup() {
     // Create a p5ble class
     myBLE = new p5ble();
 
-    createCanvas(200, 200);
-    textSize(20);
+    createCanvas(300, 500);
+
+    x = width / 2;
+    y = height;
+
+    textSize(80);
     textAlign(CENTER, CENTER);
 
     // Create a 'Connect' button
@@ -39,7 +50,33 @@ function gotValue(error, value) {
     myBLE.read(myCharacteristic, gotValue);
 }
 
+
+
 function draw() {
-    background(250);
-    text(myValue, 100, 100);
+    if (myValue == 1) {
+        anim()
+    }
+}
+// }
+
+function anim() {
+    // connectButton.remove();
+
+    background(200);
+
+    // Draw a circle
+    stroke(50);
+    fill(100);
+    ellipse(x, y, 24, 24);
+
+    // Jiggling randomly on the horizontal axis
+    x = x + random(-1, 1);
+    // Moving up at a constant speed
+    y = y - 1;
+
+    // Reset to the bottom
+    if (y < 0) {
+        next()
+
+    }
 }

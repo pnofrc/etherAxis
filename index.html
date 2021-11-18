@@ -8,11 +8,29 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <script src="./script/cookie.js"></script>
 </head>
 
 <body>
+    <div class="intro">
+        <h1>Ether Axis</h1>
+        <p>Welcome to ....</p>
+        <button onclick="next()">Start</button>
 
-    <script src="" async defer></script>
+    </div>
+
+
+
+    <script src="app.js"></script>
+    <script defer async>
+        routing();
+
+        function next() {
+            Cookies.set('0', 'compass')
+            window.location.href = "compass.html"
+        }
+    </script>
+
 </body>
 
 </html>

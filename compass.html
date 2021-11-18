@@ -8,18 +8,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>etherAxis</title>
     <link rel="stylesheet" href="style.css">
+    <script src="./script/cookie.js"></script>
+
 </head>
 
 <body>
-    <span id="x"></span>
-    <div class="compass">
-        <div class="arrow"></div>
-        <div class="compass-circle"></div>
-        <div class="my-point"></div>
-    </div>
-    <button class="start-btn">Start compass</button>
 
+    <div class="container">
+        <span id="x"></span>
+        <div class="compass">
+            <div class="arrow"></div>
+            <div class="compass-circle"></div>
+            <div class="my-point"></div>
+        </div>
+        <button class="start-btn">Start compass</button>
+    </div>
+
+    <button onclick="next()">Next</button>
+    <script src="./app.js"></script>
+
+    <script src="./script/dictio.js"></script>
     <script src="./script/compass_app.js"></script>
+    <script>
+        function next() {
+            let cookie = Cookies.get();
+            var key = Object.keys(cookie)[0];
+            Cookies.set(key, '')
+            routing()
+        }
+    </script>
+
 
 </body>
 

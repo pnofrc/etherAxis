@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>etherAxis</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-                
-        <script src="" async defer></script>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <title>etherAxis</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style_rec.css">
+    <script src="./script/cookie.js"></script>
+
+</head>
+
+<body>
+    <div id="controls">
+        <button id="recordButton" onclick="startConverting(0)">Record</button>
+        <button id="stopButton" onclick="startConverting(1)" disabled>Stop</button>
+    </div>
+
+    <div id="process"></div>
+
+    <!-- <p><strong>Recordings:</strong></p> -->
+    <ol id="recordingsList"></ol>
+
+    <br><br>
+    <!-- <a href="./ether_archive/">Now you can access to the archive</a> -->
+
+    <button onclick=next()>Next</button>
+
+
+    <script src="./script/recorder.js"></script>
+    <script src="./script/recorder_app.js"></script>
+    <script src="app.js"></script>
+    <script src="./script/speech.js"></script>
+    <script>
+        checkCheck(2)
+
+        function next() {
+            Cookies.set(2, 'quest')
+            routing()
+        }
+    </script>
+</body>
+
 </html>

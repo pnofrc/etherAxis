@@ -113,7 +113,7 @@ function createDownloadLink(blob) {
     // link.innerHTML = "Save to disk";
 
     //add the new audio element to li
-    // li.appendChild(au);
+    li.appendChild(au);
 
     //add the filename to the li
     // li.appendChild(document.createTextNode(filename + ".wav "))
@@ -136,6 +136,13 @@ function createDownloadLink(blob) {
         fd.append("audio_data", blob, filename);
         xhr.open("POST", "./script/upload.php", true);
         xhr.send(fd);
+
+
+
+
+
+        window.location.href = './ether_archive/'
+
     })
     li.appendChild(document.createTextNode(" ")) //add a space in between
     li.appendChild(upload) //add the upload link to li

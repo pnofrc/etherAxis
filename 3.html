@@ -7,24 +7,19 @@
     <title>etherAxis</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style_rec.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script/p5.min.js"></script>
+    <script src="./script/p5.dom.min.js"></script>
+    <script src="./script/p5.ble.js"></script>
+    <script src="./script/cookie.js"></script>
+
 </head>
 
 <body>
-    <div id="controls">
-        <button id="recordButton">Record</button>
-        <button id="stopButton" disabled>Stop</button>
-    </div>
-
-    <p><strong>Recordings:</strong></p>
-    <ol id="recordingsList"></ol>
-
-    <br><br>
-    <a href="./ether_archive/">Now you can access to the archive</a>
-
-
-    <script src="./script/recorder.js"></script>
-    <script src="./script/recorder_app.js"></script>
-</body>
+    <script src="./ble.js" defer async></script>
+    <script src="app.js"></script>
+    <script>
+        checkCheck(3)
+    </script>
 
 </html>

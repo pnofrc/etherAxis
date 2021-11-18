@@ -1,3 +1,24 @@
+function checkCookie() {
+    let cookie = Cookies.get();
+    let lenCookie = Object.keys(cookie).length;
+
+    if (lenCookie > 0) {
+        let current = Object.keys(cookie)[0].toString()
+            // console.log(cookie)
+        console.log(current)
+        return (current)
+    } else {
+        window.location.href = "index.html"
+    }
+}
+let current = checkCookie()
+console.log(coord[current])
+let latGoal = coord[current][0]
+let lngGoal = coord[current][1]
+console.log(lngGoal)
+
+
+
 const compassCircle = document.querySelector(".compass-circle");
 const myPoint = document.querySelector(".my-point");
 const startBtn = document.querySelector(".start-btn");
@@ -36,39 +57,21 @@ function handler(e) {
 
 let pointDegree;
 
-const goal = { latGoal, lngGoal } = [51.925641, 4.4758654]
-
-console.log(goal[1])
 
 function locationHandler(position) {
     const { latitude, longitude } = position.coords;
-    pointDegree = calcDegreeToPoint(latitude, longitude, goal[0], goal[1]);
+    pointDegree = calcDegreeToPoint(latitude, longitude, latGoal, lngGoal);
 
     if (pointDegree < 0) {
         pointDegree = pointDegree + 360;
     }
+
+    let distance = calcCrow(latitude, longitude, latGoal, lngGoal)
+    document.getElementById('x').innerHTML = distance;
+    console.log(distance)
+
+
 }
-
-
-
-function calcDegreeToPoint(latitude, longitude, latGoal, lngGoal) {
-    const phiK = (latGoal * Math.PI) / 180.0;
-    const lambdaK = (lngGoal * Math.PI) / 180.0;
-    const phi = (latitude * Math.PI) / 180.0;
-    const lambda = (longitude * Math.PI) / 180.0;
-    const psi =
-        (180.0 / Math.PI) *
-        Math.atan2(
-            Math.sin(lambdaK - lambda),
-            Math.cos(phi) * Math.tan(phiK) -
-            Math.sin(phi) * Math.cos(lambdaK - lambda)
-        );
-    return Math.round(psi);
-}
-
-init();
-
-
 
 
 function calcCrow(latitude, longitude, latGoal, lngGoal) {
@@ -89,5 +92,22 @@ function toRad(Value) {
     return Value * Math.PI / 180;
 }
 
-//let distance =  calcCrow(location.lat, location.lng, newLat,newLng)
-//document.getElementById('x').innerHTML = distance;
+
+
+
+function calcDegreeToPoint(latitude, longitude, latGoal, lngGoal) {
+    const phiK = (latGoal * Math.PI) / 180.0;
+    const lambdaK = (lngGoal * Math.PI) / 180.0;
+    const phi = (latitude * Math.PI) / 180.0;
+    const lambda = (longitude * Math.PI) / 180.0;
+    const psi =
+        (180.0 / Math.PI) *
+        Math.atan2(
+            Math.sin(lambdaK - lambda),
+            Math.cos(phi) * Math.tan(phiK) -
+            Math.sin(phi) * Math.cos(lambdaK - lambda)
+        );
+    return Math.round(psi);
+}
+
+init();
