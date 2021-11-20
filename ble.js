@@ -14,7 +14,7 @@ function setup() {
     // Create a p5ble class
     myBLE = new p5ble();
 
-    createCanvas(300, 500);
+    createCanvas(windowWidth, windowHeight);
 
     x = width / 2;
     y = height;
@@ -23,13 +23,15 @@ function setup() {
     textAlign(CENTER, CENTER);
 
     // Create a 'Connect' button
-    const connectButton = createButton('Connect')
-    connectButton.mousePressed(connectToBle);
+
 }
 
 function connectToBle() {
     // Connect to a device by passing the service UUID
-    myBLE.connect(serviceUuid, gotCharacteristics);
+
+    // myBLE.connect(serviceUuid, gotCharacteristics);
+    myValue = 1
+    document.getElementById("connection").remove()
 }
 
 // A function that will be called once got characteristics

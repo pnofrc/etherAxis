@@ -170,3 +170,7 @@ ul {
 #riddleButton {
     display: none;
 }
+
+#connection {
+    position: absolute;
+}
