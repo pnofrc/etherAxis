@@ -22,7 +22,7 @@ $fs = preg_grep('/^([^.])/', scandir('./ether_archive'));
 foreach ($fs as $fileCurr) {
     $filePath = $fileCurr;
     $date = date("F d Y", fileatime($fileCurr));
-    echo "<div class='lista'><span><a href='./$filePath' title='$filecurr'>$fileCurr</a></span><span>$date</span><hr></div>";
+    echo "<div class='lista'><span><a href='./ether_archive/$filePath' title='$filecurr'>$fileCurr</a></span><span>$date</span><hr></div>";
 }  
 ?>
 </div>
