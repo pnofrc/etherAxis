@@ -16,16 +16,12 @@
 <body>
 
 
-    <div id="instruction">
-        HELLOO beaugufaifaoful people Did you do this and this?
-        <button onclick="next()">yes, forward</button>
-    </div>
+
     <div class="container">
         <div>
             <p id="text"></p>
         </div>
-        <input type="text" placeholder="Type " id="input">
-        <button type="button" onclick="getInputValue();">check</button>
+        <button onclick="next()">yes, forward</button>
     </div>
 
     <script src="https://hub.xpub.nl/etheraxis/pad/p/dictio/export/txt"></script>
@@ -33,26 +29,12 @@
 
     <script>
         checkCheck(0);
+        checkCookie()
+        document.getElementById("text").innerHTML = text[checkCookie()]
 
         function next() {
             Cookies.set(0, 'quest')
             routing()
-        }
-
-        let cookie = Cookies.get();
-        let value = Object.values(cookie)[0]
-        console.log(value)
-        if (value == 'intermezzo') {
-            $('#instruction').css('display', 'block')
-        }
-        document.getElementById("text").innerHTML = text[0]
-
-        function getInputValue() {
-            let inputVal = document.getElementById("input").value;
-            if (inputVal == 'immergo') {
-                Cookies.set(0, 'intermezzo');
-                $('#instruction').slideDown()
-            }
         }
     </script>
 </body>

@@ -40,7 +40,7 @@
         <p id="text"></p>
     </div>
 
-    <button onclick="riddle()">Riddle</button>
+    <button id="riddleButton" onclick="riddle()">Riddle</button>
     <script src="./app.js"></script>
 
     <script src="https://hub.xpub.nl/etheraxis/pad/p/dictio/export/txt"></script>
@@ -60,7 +60,6 @@
             $("input").css("display", "none");
             $("#button").css("display", "none");
             $("#button3").css("display", "none");
-            $("#button4").css("display", "block");
 
             for (let x = 0; x < 4; x++) {
                 let i = localStorage.getItem(x);
@@ -70,11 +69,17 @@
         } else {
             document.getElementById("textRiddle").innerHTML = rid[key];
             $("#button3").css("display", "none");
-            $("#button4").css("display", "none");
         }
+
+        input.addEventListener('keypress', function(ev) {
+            if (ev.keyCode === 13 || ev.which === 13) {
+                getInputValue()
+            }
+        });
 
         function getInputValue() {
             let inputVal = document.getElementById("input").value;
+            inputVal = inputVal.toLowerCase()
             if (inputVal == password[key]) {
                 Cookies.set(key, '');
                 routing();
@@ -96,6 +101,7 @@
         }
 
         function readme() {
+            $("#riddleButton").fadeIn()
             $("#text").text(narration[key])
             $("#narration").append("<button onclick='$(`#narration`).slideUp()'>Close</button>")
             $("#narration").slideDown()
