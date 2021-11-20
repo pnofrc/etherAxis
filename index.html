@@ -13,39 +13,37 @@
 </head>
 
 <body>
-    <div class="intro">
+    <div class="container">
         <h1>Ether Axis</h1>
-        <p>Welcome to ....</p>
+        <p id="introText"></p>
         <button onclick="quest()">Start</button>
-
     </div>
 
     <div id="questIndex">
-        <div class="container"></div>
-        <div><button onclick="next()"></button></div>
+
     </div>
 
 
     <script src="app.js"></script>
-    <script src="./script/dictio.js"></script>
+    <script src="https://hub.xpub.nl/etheraxis/pad/p/dictio/export/txt"></script>
     <script defer async>
         routing();
 
+        document.getElementById("introText").innerHTML = introintro[0]
+
         function quest() {
-            $("#questIndex").slideDown()
-            document.getElementsByClassName("container")[0].innerHTML += `<p>${qq[4]}</p><br>`
+
+            document.getElementById("questIndex").innerHTML += `<p>${qq[4]}</p><br>`
             q = quests[4]
-            document.getElementsByClassName("container")[0].innerHTML += `<button onclick="choose(0)">${q[0]}</button><br>`
-            document.getElementsByClassName("container")[0].innerHTML += `<button onclick="choose(1)">${q[1]}</button><br>`
-
-
-
+            document.getElementById("questIndex").innerHTML += `<button onclick="choose(0)">${q[0]}</button><br>`
+            document.getElementById("questIndex").innerHTML += `<button onclick="choose(1)">${q[1]}</button><br>`
+            $("#questIndex").slideDown()
         }
 
-        function next(x) {
+        function choose(x) {
             localStorage.setItem(5, x)
 
-            Cookies.set('0', 'compass')
+            Cookies.set('0', 'compas')
 
             routing();
         }

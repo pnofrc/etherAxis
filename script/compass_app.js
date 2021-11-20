@@ -15,7 +15,6 @@ let current = checkCookie()
 console.log(coord[current])
 let latGoal = coord[current][0]
 let lngGoal = coord[current][1]
-console.log(lngGoal)
 
 
 

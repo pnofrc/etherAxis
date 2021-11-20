@@ -16,10 +16,8 @@ function routing() {
         window.location.href = route + '.html'
 
     } else {
-        window.location.href = 'index.html'
-
+        // window.location.href = 'index.html'
     }
-
 }
 
 
@@ -29,7 +27,6 @@ function checkCookie() {
 
     if (lenCookie > 0) {
         let current = Object.keys(cookie)[0].toString()
-            // console.log(cookie)
         console.log(current)
         return (current)
     } else {
@@ -42,7 +39,6 @@ function checkCheck(n) {
     let current = Object.keys(cookie)
     if (current != n) {
         window.location.href = "index.html"
-
     }
 
 }
