@@ -16,7 +16,7 @@ function routing() {
         window.location.href = route + '.html'
 
     } else {
-        window.location.href = route + '.html'
+        window.location.href = 'index.html'
 
     }
 
