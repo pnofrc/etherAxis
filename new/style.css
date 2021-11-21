@@ -1,0 +1,398 @@
+:root {
+    --void: #000000;
+    --midnight: #202845;
+    --vitriol: #0C82AB;
+    --sand: #BB815F;
+    --lava: #DE4E26;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #DE4E26;
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+}
+
+.container h1 {
+    -webkit-text-stroke: 1px var(--first);
+    color: rgba(0, 0, 0, 0.05);
+    font-size: 10vh;
+    /* color: ); */
+}
+
+.archive {
+    /* width: 80%;
+    height: 50%; */
+    border: solid;
+}
+
+.compass {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    display: none;
+}
+
+.compass>.arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-style: solid;
+    border-width: 30px 20px 0 20px;
+    border-color: red transparent transparent transparent;
+    z-index: 1;
+}
+
+.compass>.compass-circle,
+.compass>.my-point {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out;
+    background: url(../assets/compas.png) center no-repeat;
+    background-size: contain;
+}
+
+.compass>.my-point {
+    opacity: 0;
+    width: 20%;
+    height: 20%;
+    background: rgb(8, 223, 69);
+    border-radius: 50%;
+    transition: opacity 0.5s ease-out;
+}
+
+.start-btn {
+    margin-bottom: auto;
+}
+
+#instruction {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    background-color: var(--second);
+    color: white;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    list-style: none;
+    width: 100%;
+    height: 100vh;
+}
+
+.intro {
+    position: absolute;
+    z-index: 0;
+}
+
+#questIndex {
+    background-color: red;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    display: none;
+    color: cyan;
+}
+
+.quest {
+    position: relative;
+    z-index: 0;
+}
+
+#narration {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.7);
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 90;
+    display: none;
+}
+
+.glow {
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-animation: glowing 1s ease-in-out infinite alternate;
+    -moz-animation: glowing 1s ease-in-out infinite alternate;
+    animation: glowing 1s ease-in-out infinite alternate;
+}
+
+@keyframes glowing {
+    from {
+        box-shadow: 0 0 10px #fff, 0 0 2px #fff, 0 0 3px rgb(0, 0, 0), 0 0 20px rgb(2, 78, 171), 0 0 5px #ff3c00, 0 0 6px #e68200, 0 0 7px #2e2e2e;
+    }
+    to {
+        box-shadow: 0 0 10px #fff, 0 0 10px #ff3c00, 0 10 15px #ff290c, 0 10 10px #c17a10, 0 0 10px #d68202, 0 0 10px #e6be83, 0 0 10px #bfac8f;
+    }
+}
+
+.stopGlow {
+    background-color: #fff;
+    animation: none;
+    -webkit-animation: none;
+    -moz-animation: none;
+}
+
+#riddle {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    ;
+}
+
+#button3 {
+    display: none;
+}
+
+#riddleButton {
+    display: none;
+}
+
+#connection {
+    position: absolute;
+    width: 90%;
+    height: 50%;
+    z-index: 100;
+}
+
+
+/*louisa*/
+
+body {
+    background-color: rgba(0, 0, 0, 0.2);
+    max-width: 90ch;
+    color: var(--lava);
+}
+
+#riddle {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: rgba(245, 245, 245, 0.864);
+}
+
+button {
+    background-color: rgba(255, 76, 5, 0.728);
+    border: none;
+    color: rgba(245, 245, 245, 0.864);
+    padding: 5px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    border-color: rgba(132, 138, 132, 0.864);
+    border-width: 1.5px;
+    border-style: solid;
+    border-radius: 4px;
+}
+
+.button:active {
+    background-color: rgba(245, 245, 245, 0.864);
+    color: rgba(255, 76, 5, 0.728);
+}
+
+input[type=text] {
+    border: 1.5px solid var(--lava);
+    border-radius: 4px;
+    background-color: var(--void);
+    color: var(--lava);
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+
+/*louisa layout*/
+
+button {
+    background-color: rgb(219, 223, 219);
+    color: rgba(132, 138, 132, 0.864);
+    padding: 5px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 2em;
+    border-color: rgba(245, 245, 245, 0.864);
+    border-width: 1.5px;
+    border-style: solid;
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+}
+
+.button:active {
+    background-color: rgba(245, 245, 245, 0.864);
+    color: rgba(255, 76, 5, 0.728);
+}
+
+.archive {
+    display: none;
+}
+
+.clicked {
+    background-color: var(--lava);
+    columns: white;
+}
+
+.clicked2 {
+    background-color: var(--vitriol);
+    columns: white;
+}
+
+.container {
+    margin: 5px;
+    background-color: red;
+    height: 100%;
+}
+
+.child {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#main {
+    height: 50vh;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+    margin-bottom: 5px;
+    border-color: rgba(132, 138, 132, 0.864);
+    border-width: 1.5px;
+    border-style: solid;
+    border-radius: 4px;
+}
+
+#main-content {
+    background-color: rgb(219, 223, 219);
+    border-radius: 10px;
+    text-align: center;
+    height: 100%;
+    font-size: 2em;
+    display: flex;
+    z-index: 0;
+    object-fit: contain;
+}
+
+.some-page-wrapper {
+    margin: 5px;
+    justify-content: flex-end;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.tool {
+    background-color: rgb(219, 223, 219);
+    border-radius: 10px;
+    height: 100px;
+    margin: 5px 5px;
+    border-color: rgba(132, 138, 132, 0.864);
+    border-width: 1.5px;
+    border-style: solid;
+    border-radius: 4px;
+}
+
+.code-input {
+    background-color: rgb(219, 223, 219);
+    height: 100px;
+    margin: 5px 5px;
+    border-radius: 10px;
+    border-color: rgba(132, 138, 132, 0.864);
+    border-width: 1.5px;
+    border-style: solid;
+    border-radius: 4px;
+}
+
+.objective,
+.input {
+    /* background-color: rgb(219, 223, 219); */
+    background-color: rgba(141, 182, 59, 0.644);
+    margin: 5px 5px;
+    border-radius: 10px;
+    border-color: rgba(132, 138, 132, 0.864);
+    border-width: 1.5px;
+    border-style: solid;
+    border-radius: 4px;
+    display: none;
+    min-width: 90%;
+    height: 50%;
+    z-index: 20;
+    position: absolute;
+    top: 2%;
+    left: 4%;
+    filter: drop-shadow(0 0 0.25rem var(--midnight));
+}
+
+.input button {
+    height: 5%;
+    font-size: 10%;
+    width: 75%;
+}
+
+#bridgecard-code {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+canvas {
+    position: absolute;
+    /* z-index: 2; */
+}
+
+#menu {
+    position: relative;
+    z-index: 99;
+}
+
+.test {
+    border: solid;
+}
+
+.input {
+    display: none;
+}
