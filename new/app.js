@@ -137,7 +137,7 @@ function onObj() {
 function onInput() {
     offObj;
     $(".input").slideDown();
-    $("#objInput").addClass("clicked2")
+    $("#offInput").addClass("clicked2")
 
 }
 
@@ -152,7 +152,7 @@ function checkCheck() { //check at what point u are and routing
     if (valueTool == "compass") {
         onCompass()
         offObj()
-        objInput()
+        offInput()
 
     }
 
@@ -162,7 +162,7 @@ function checkCheck() { //check at what point u are and routing
         offGyro()
         offBle()
         offObj()
-        objInput()
+        offInput()
     }
 
     if (valueTool == "ble") {
@@ -171,7 +171,7 @@ function checkCheck() { //check at what point u are and routing
         offArchive()
         offGyro()
         offObj()
-        objInput()
+        offInput()
     }
     if (valueTool == "gyro") {
         onGyro()
@@ -179,7 +179,7 @@ function checkCheck() { //check at what point u are and routing
         offArchive()
         offBle()
         offObj()
-        objInput()
+        offInput()
     }
 
 
