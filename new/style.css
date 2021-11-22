@@ -88,6 +88,13 @@ body {
 
 .start-btn {
     margin-bottom: auto;
+    height: 10%;
+    width: 50%;
+    font-size: 14px;
+    left: 25%;
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
 }
 
 #instruction {
@@ -408,5 +415,6 @@ canvas {
     /* position: relative; */
     width: 80%;
     margin-left: 10%;
-    bottom: 0;
+    bottom: 16px;
+    font-size: 24px;
 }

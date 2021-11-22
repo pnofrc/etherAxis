@@ -24,6 +24,7 @@
                 <div class="arrow"></div>
                 <div class="compass-circle"></div>
                 <div class="my-point"></div>
+                <button class="start-btn">Restart compass</button>
                 <div><p id="nMap"></p></div>
             </div>
 
