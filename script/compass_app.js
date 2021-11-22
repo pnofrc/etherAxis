@@ -21,12 +21,14 @@ let lngGoal = coord[current][1]
 const compassCircle = document.querySelector(".compass-circle");
 const myPoint = document.querySelector(".my-point");
 const startBtn = document.querySelector(".start-btn");
+const comBtn = document.getElementById("#compassButt")
 const isIOS =
     navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&
     navigator.userAgent.match(/AppleWebKit/);
 
 function init() {
     startBtn.addEventListener("click", startCompass);
+    comBtn.addEventListener("click", startCompass);
     navigator.geolocation.getCurrentPosition(locationHandler);
     console.log(navigator.geolocation.getCurrentPosition(locationHandler));
     if (!isIOS) {
@@ -66,7 +68,6 @@ function locationHandler(position) {
     }
 
     let distance = calcCrow(latitude, longitude, latGoal, lngGoal)
-    document.getElementById('x').innerHTML = distance;
     console.log(distance)
 
 
