@@ -17,20 +17,8 @@ const isIOS =
 function init() {
     startBtn.addEventListener("click", startCompass);
 
-    navigator.geolocation.getCurrentPosition(function(location) {
-        console.log(location.coords.latitude);
-        console.log(location.coords.longitude);
-        console.log(location.coords.accuracy);
-
-        pointDegree = calcDegreeToPoint(location.coords.latitude, location.coords.longitude, latGoal, lngGoal);
-        console.log(pointDegree)
-        if (pointDegree < 0) {
-            pointDegree = pointDegree + 360;
-        }
-    });
-
-    // navigator.geolocation.getCurrentPosition(locationHandler);
-    // console.log(navigator.geolocation.getCurrentPosition(locationHandler));
+    navigator.geolocation.getCurrentPosition(locationHandler);
+    console.log(navigator.geolocation.getCurrentPosition(locationHandler));
     if (!isIOS) {
         window.addEventListener("deviceorientationabsolute", handler, true);
     }
@@ -60,6 +48,16 @@ function handler(e) {
 let pointDegree;
 
 
+function locationHandler(position) {
+    const { latitude, longitude } = position.coords;
+    pointDegree = calcDegreeToPoint(latitude, longitude, latGoal, lngGoal);
+    console.log(pointDegree)
+    if (pointDegree < 0) {
+        pointDegree = pointDegree + 360;
+    }
+
+
+}
 
 
 
