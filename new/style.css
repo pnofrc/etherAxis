@@ -309,7 +309,7 @@ button {
     text-align: center;
     height: 100%;
     font-size: 2em;
-    display: flex;
+    /* display: flex; */
     z-index: 0;
     object-fit: contain;
 }
