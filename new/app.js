@@ -205,6 +205,12 @@ for (var e = 0; e < btns2.length; e++) {
     });
 }
 
+input.addEventListener('keypress', function(ev) {
+    if (ev.keyCode === 13 || ev.which === 13) {
+        getInputValue()
+    }
+});
+
 function getInputValue() {
     let inputVal = document.getElementById("input").value;
     inputVal = inputVal.toLowerCase()
