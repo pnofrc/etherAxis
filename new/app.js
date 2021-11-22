@@ -8,6 +8,7 @@ let current = Object.keys(cookie);
 let len = current.length
 $("canvas").slideUp();
 
+
 if (len == 0) {
     Cookies.set('level', 0)
     Cookies.set('tool', "compass")
