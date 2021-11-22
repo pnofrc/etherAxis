@@ -151,24 +151,35 @@ function checkCheck() { //check at what point u are and routing
     let valueTool = Cookies.get("tool");
     if (valueTool == "compass") {
         onCompass()
+        offObj()
+        oggInput()
 
     }
 
     if (valueTool == "archive") {
         onArchive()
         offCompass()
+        offGyro()
+        offBle()
+        offObj()
+        oggInput()
     }
 
     if (valueTool == "ble") {
         onBle()
         offCompass()
         offArchive()
+        offGyro()
+        offObj()
+        oggInput()
     }
     if (valueTool == "gyro") {
         onGyro()
         offCompass()
         offArchive()
         offBle()
+        offObj()
+        oggInput()
     }
 
 
