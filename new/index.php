@@ -106,14 +106,15 @@
     <div id="questIndex">
 
     </div>
-
     <script src="https://hub.xpub.nl/etheraxis/pad/p/dictio/export/txt"></script>
+    <script src="app.js" defer async></script>
+    <script src="compass_app.js" async></script>
 
     <script src="./ble.js" defer async></script>
-    <script src="app.js" defer async></script>
+
   
     <!-- <script src="dictio.js" ></script> -->
-    <script src="compass_app.js"></script>
+
  
 
 
