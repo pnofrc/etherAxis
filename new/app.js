@@ -1,11 +1,53 @@
+$("#gyroButt").prop('disabled', true)
+$("#archiveButt").prop('disabled', true)
+$("#bleButt").prop('disabled', true)
+
+
 let cookie = Cookies.get();
 let current = Object.keys(cookie);
+let len = current.length
 $("canvas").slideUp();
 
+if (len == 0) {
+    Cookies.set('level', 0)
+    Cookies.set('tool', "compass")
+    checkItem()
+        // $(".compass").fadeIn()
+        // $("#compassButt").addClass("clicked")
+} else {
+    checkItem()
+    checkCheck()
+}
 
+
+function checkItem() {
+    if (Cookies.get('gyro')) {
+        $("#gyroButt").prop('disabled', false)
+    } else {}
+    if (Cookies.get("archive")) {
+        $("#archiveButt").prop('disabled', false)
+
+    } else {}
+    if (Cookies.get("ble")) {
+
+        $("#bleButt").prop('disabled', false)
+
+    } else {}
+
+
+
+}
+
+
+
+currentLev = Cookies.get("level");
+$("#text").text(narration[currentLev])
+$("#text2").text(text[currentLev])
+$("#nMap").text(coord[currentLev][2])
 
 function offCompass() {
-    $(".compass").slideUp()
+    $(".compass").fadeOut()
+    $("#compassButt").removeClass("clicked")
 }
 
 function offArchive() {
@@ -40,7 +82,7 @@ function onCompass() {
     offInput();
     offGyro();
     $("#compassButt").addClass("clicked")
-    $(".compass").slideDown()
+    $(".compass").fadeIn()
 
     Cookies.set("tool", "compass");
 }
@@ -108,23 +150,32 @@ function checkCheck() { //check at what point u are and routing
     let valueTool = Cookies.get("tool");
     if (valueTool == "compass") {
         onCompass()
+
     }
 
     if (valueTool == "archive") {
         onArchive()
+        offCompass()
     }
 
     if (valueTool == "ble") {
         onBle()
+        offCompass()
+        offArchive()
     }
     if (valueTool == "gyro") {
         onGyro()
+        offCompass()
+        offArchive()
+        offBle()
     }
 
 
 }
 
 checkCheck()
+
+
 
 var btnContainer = document.getElementById("menu");
 var btns = btnContainer.getElementsByClassName("menuButt");
@@ -157,8 +208,13 @@ for (var e = 0; e < btns2.length; e++) {
 function getInputValue() {
     let inputVal = document.getElementById("input").value;
     inputVal = inputVal.toLowerCase()
-    if (inputVal == password[key]) {
-        Cookies.set(key, '');
-        routing();
+    if (inputVal == password[currentLev]) {
+        Cookies.set(item[currentLev], 1);
+        Cookies.set('tool', item[currentLev]);
+        (console.log(currentLev++))
+        Cookies.set('level', currentLev);
+
+        checkItem()
+        checkCheck()
     }
 }

@@ -24,6 +24,7 @@
                 <div class="arrow"></div>
                 <div class="compass-circle"></div>
                 <div class="my-point"></div>
+                <div><p id="nMap"></p></div>
             </div>
 
             <div class="archive">
@@ -44,7 +45,8 @@
             </div>
 
             <div class="objective">
-                
+                    <p id="text"></p>
+                    <p id="text2"></p>
             </div>
 
             <div class="input">
@@ -104,16 +106,19 @@
 
     </div>
 
+    <script src="https://hub.xpub.nl/etheraxis/pad/p/dictio/export/txt"></script>
+
     <script src="./ble.js" defer async></script>
     <script src="app.js" defer async></script>
-    <script src="https://hub.xpub.nl/etheraxis/pad/p/dictio/export/txt" defer async></script>
+  
+    <!-- <script src="dictio.js" ></script> -->
+    <script src="compass_app.js" defer async></script>
  
 
 
 
+
+
+
 </body>
-
-<script>
-</script>
-
 </html>

@@ -379,8 +379,13 @@ button {
     font-size: 1.2em;
 }
 
+.ble {
+    display: none;
+}
+
 canvas {
     position: absolute;
+    display: none;
     /* z-index: 2; */
 }
 
@@ -395,4 +400,13 @@ canvas {
 
 .input {
     display: none;
+}
+
+#nMap {
+    position: absolute;
+    z-index: 200;
+    /* position: relative; */
+    width: 80%;
+    margin-left: 10%;
+    bottom: 0;
 }
