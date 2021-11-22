@@ -152,7 +152,7 @@ function checkCheck() { //check at what point u are and routing
     if (valueTool == "compass") {
         onCompass()
         offObj()
-        oggInput()
+        objInput()
 
     }
 
@@ -162,7 +162,7 @@ function checkCheck() { //check at what point u are and routing
         offGyro()
         offBle()
         offObj()
-        oggInput()
+        objInput()
     }
 
     if (valueTool == "ble") {
@@ -171,7 +171,7 @@ function checkCheck() { //check at what point u are and routing
         offArchive()
         offGyro()
         offObj()
-        oggInput()
+        objInput()
     }
     if (valueTool == "gyro") {
         onGyro()
@@ -179,7 +179,7 @@ function checkCheck() { //check at what point u are and routing
         offArchive()
         offBle()
         offObj()
-        oggInput()
+        objInput()
     }
 
 
