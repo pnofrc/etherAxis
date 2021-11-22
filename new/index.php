@@ -113,7 +113,7 @@
     <script src="app.js" defer async></script>
   
     <!-- <script src="dictio.js" ></script> -->
-    <script src="compass_app.js" defer async></script>
+    <script src="compass_app.js"></script>
  
 
 
