@@ -52,35 +52,34 @@ function offCompass() {
 }
 
 function offArchive() {
-    $(".archive").slideUp()
+    $(".archive").fadeOut()
 }
 
 function offBle() {
-    $(".ble").slideUp();
+    $(".ble").fadeOut();
     $("canvas").slideUp();
 }
 
-function offObj() {
-    $(".objective").slideUp();
-    $("#objButt").removeClass("clicked2")
+// function offObj() {
+//     $(".objective").fadeOut();
+//     $('#objButt').removeClass("clicked2")
+// }
 
-}
-
-function offInput() {
-    $(".input").slideUp();
-    $("#inputButt").removeClass("clicked2")
-}
+// function offInput() {
+//     $(".input").fadeOut();
+//     $("#inputButt").removeClass("clicked2")
+// }
 
 function offGyro() {
-    $(".gyro").slideUp();
+    $(".gyro").fadeOut();
 
 }
 
 function onCompass() {
     offArchive();
     offBle();
-    offObj();
-    offInput();
+    //offObj();
+    //offInput();
     offGyro();
     $("#compassButt").addClass("clicked")
     $(".compass").fadeIn()
@@ -91,24 +90,24 @@ function onCompass() {
 function onArchive() {
     offCompass();
     offBle();
-    offObj();
-    offInput();
+    //offObj();
+    //offInput();
     offGyro();
 
     $("#archiveButt").addClass("clicked")
-    $(".archive").slideDown()
+    $(".archive").fadeIn()
 
     Cookies.set("tool", "archive");
 }
 
 function onBle() {
-    $("canvas").slideDown();
+    $("canvas").fadeIn();
     offArchive();
     offCompass;
-    offObj();
-    offInput();
+    //offObj();
+    //offInput();
     offGyro();
-    $(".ble").slideDown();
+    $(".ble").fadeIn();
     $("#bleButt").addClass("clicked")
 
     Cookies.set("tool", "ble");
@@ -118,9 +117,9 @@ function onGyro() {
     offCompass();
     offBle();
     offArchive();
-    offObj;
-    offInput();
-    $(".gyro").slideDown();
+    // offObj;
+    //offInput();
+    $(".gyro").fadeIn();
     $("#gyroButt").addClass("clicked")
 
     Cookies.set("tool", "gyro");
@@ -129,15 +128,15 @@ function onGyro() {
 
 
 function onObj() {
-    offInput();
-    $(".objective").fadeIn();
-    $("#objButt").addClass("clicked2")
+    //offInput();
+    $(".objective").toggle();
+    $("#objButt").toggleClass("clicked2")
 }
 
 function onInput() {
-    offObj;
-    $(".input").slideDown();
-    $("#offInput").addClass("clicked2")
+    // offObj;
+    $(".input").toggle();
+    $("#inputButt").toggleClass("clicked2")
 
 }
 
@@ -151,8 +150,8 @@ function checkCheck() { //check at what point u are and routing
     let valueTool = Cookies.get("tool");
     if (valueTool == "compass") {
         onCompass()
-        offObj()
-        offInput()
+            // offObj()
+            // offInput()
 
     }
 
@@ -161,8 +160,8 @@ function checkCheck() { //check at what point u are and routing
         offCompass()
         offGyro()
         offBle()
-        offObj()
-        offInput()
+            // offObj()
+            // offInput()
     }
 
     if (valueTool == "ble") {
@@ -170,16 +169,16 @@ function checkCheck() { //check at what point u are and routing
         offCompass()
         offArchive()
         offGyro()
-        offObj()
-        offInput()
+            // offObj()
+            // offInput()
     }
     if (valueTool == "gyro") {
         onGyro()
         offCompass()
         offArchive()
         offBle()
-        offObj()
-        offInput()
+            // offObj()
+            // offInput()
     }
 
 
@@ -201,21 +200,7 @@ for (var i = 0; i < btns.length; i++) {
     });
 }
 
-var btns2 = btnContainer.getElementsByClassName("gameButt");
-console.log(btns2.length)
-for (var e = 0; e < btns2.length; e++) {
-    btns2[e].addEventListener("click", function() {
-        var current = document.getElementsByClassName("clicked2");
 
-        // If there's no active class
-        if (current.length > 0) {
-            current[0].className = current[0].className.replace(" clicked2", "");
-        }
-
-        // Add the active class to the current/clicked button
-        this.className += " clicked2";
-    });
-}
 
 input.addEventListener('keypress', function(ev) {
     if (ev.keyCode === 13 || ev.which === 13) {
