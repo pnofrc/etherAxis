@@ -67,7 +67,7 @@
                         
                         ?>
                     <button onclick="back()">back to recorder</button>
-                    <button id="recorderLevel" onclick="quest()" >Finish level</button>
+                    <button id="recorderLevel" onclick="recooooooord()" >Finish level</button>
                 </div>
             </div>
 

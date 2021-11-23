@@ -409,3 +409,8 @@ function quest() {
 
 
 }
+
+function recooooooord() {
+    quest()
+    back()
+}
