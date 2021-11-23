@@ -1,3 +1,5 @@
+//make the wireless tangible and show the mitic side
+
 $("#gyroButt").prop('disabled', true)
 $("#archiveButt").prop('disabled', true)
 $("#bleButt").prop('disabled', true)
@@ -137,9 +139,9 @@ function onGyro() {
 
 function onObj() {
     $("#text").text(narration[currentLev])
-    $("#text2").text(text[currentLev])
+        // $("#text2").text(text[currentLev])
     offInput();
-    $(".objective").slideToggle(800);
+    $(".objective").fadeToggle(800);
     $("#objButt").toggleClass("clicked2")
 
 }
@@ -152,7 +154,7 @@ function onInput() {
     if (Cookies.get("bridge") == '') {
         instructionLevel()
     }
-    $(".input").slideToggle(800);
+    $(".input").fadeToggle(800);
 
 
     $("#inputButt").toggleClass("clicked2")
