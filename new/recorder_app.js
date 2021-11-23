@@ -7,6 +7,7 @@ function next() {
 function back() {
     $(".uploaded").fadeOut()
     $(".recorder").fadeIn()
+    $("#recorderLevel").fadeOut()
 }
 
 if (currentLev > 2) { $("#arch").fadeIn() }
