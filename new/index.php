@@ -13,6 +13,9 @@
     <script src="../script/p5.min.js"></script>
     <script src="../script/p5.dom.min.js"></script>
     <script src="../script/p5.ble.js"></script>
+    <script src="../script/recorder.js"></script>
+    <script src="p5.func.min.js"></script>
+
 </head>
 
 <body>
@@ -30,16 +33,36 @@
             
 
             <div class="archive">
-                <?php 
+                <div class="recorder">
+
+            <div id="controls">
+                <button id="recordButton" onclick="startConverting(0)">Record</button>
+                <button id="stopButton" onclick="startConverting(1)" disabled>Stop</button>
+            </div>
+
+            <div id="process"></div>
+            <ol id="recordingsList"></ol>
+
+            <br><br>
+
+            <button id="arch" onclick=next()>Next</button>
+
+            </div>
+
+            <div class="uploaded">
+            <?php 
                 error_reporting(0);
                 $fs = preg_grep('/^([^.])/', scandir('../ether_archive')); 
                 foreach ($fs as $fileCurr) {
                     $filePath = $fileCurr;
                     $date = date("F d Y", fileatime($fileCurr));
-                    echo "<span><a href='../ether_archive/$filePath' title='$filecurr'>$fileCurr</a></span><span>$date</span><hr>";
+                    echo "<span><a href='../ether_archive/$filePath' title='$filecurr'>$fileCurr</a></span><br><span>$date</span><hr>";
                 }  
                 ?>
             </div>
+            </div>
+
+           
 
             <div class="ble">
                 <button id="connection" onclick="connectToBle()">Connect</button>
@@ -110,7 +133,7 @@
     <script src="https://hub.xpub.nl/etheraxis/pad/p/dictio/export/txt"></script>
     <script src="app.js"></script>
     <script src="compass_app.js" ></script>
-
+    <script src="./recorder_app.js"></script>
     <script src="./ble.js" ></script>
 
   

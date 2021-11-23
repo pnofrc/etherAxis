@@ -36,9 +36,15 @@ body {
 }
 
 .archive {
-    /* width: 80%;
-    height: 50%; */
+    width: 100%;
+    height: 100%;
     border: solid;
+    overflow-y: scroll;
+}
+
+.archive span {
+    font-size: 20px;
+    line-height: 20px;
 }
 
 .compass {
@@ -194,9 +200,10 @@ ul {
 
 #connection {
     position: absolute;
-    width: 90%;
-    height: 50%;
-    z-index: 100;
+    z-index: 5;
+    width: 20%;
+    height: 5%;
+    font-size: 14px;
 }
 
 
@@ -381,6 +388,12 @@ button {
     width: 75%;
 }
 
+.archive button {
+    height: 5%;
+    font-size: 10%;
+    width: 75%;
+}
+
 #bridgecard-code {
     text-align: center;
     font-size: 1.2em;
@@ -392,8 +405,8 @@ button {
 
 canvas {
     position: absolute;
-    display: none;
-    /* z-index: 2; */
+    /* display: none; */
+    z-index: 2;
 }
 
 #menu {
@@ -411,10 +424,14 @@ canvas {
 
 #nMap {
     position: absolute;
-    z-index: 200;
+    z-index: 2;
     /* position: relative; */
     width: 80%;
     margin-left: 10%;
     bottom: 16px;
     font-size: 24px;
+}
+
+.uploaded {
+    display: none
 }

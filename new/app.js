@@ -6,7 +6,7 @@ $("#bleButt").prop('disabled', true)
 let cookie = Cookies.get();
 let current = Object.keys(cookie);
 let len = current.length
-$("canvas").slideUp();
+    // $("canvas").slideUp();
 
 
 if (len == 0) {
@@ -53,33 +53,50 @@ function offCompass() {
 
 function offArchive() {
     $(".archive").fadeOut()
+    $("#archiveButt").removeClass("clicked")
+
 }
 
 function offBle() {
     $(".ble").fadeOut();
-    $("canvas").slideUp();
+    $("canvas").fadeOut();
+    $("#bleButt").removeClass("clicked")
+
 }
 
-// function offObj() {
-//     $(".objective").fadeOut();
-//     $('#objButt').removeClass("clicked2")
-// }
-
-// function offInput() {
-//     $(".input").fadeOut();
-//     $("#inputButt").removeClass("clicked2")
-// }
 
 function offGyro() {
     $(".gyro").fadeOut();
+    $("#gyroButt").removeClass("clicked")
+
 
 }
+
+function offObj() {
+    if ($(".objective").css("display", "block")) {
+        $(".objective").toggle();
+    }
+    if ($("#objButt").hasClass("clicked2")) {
+        $("#objButt").toggleClass("clicked2")
+    }
+}
+
+function offInput() {
+
+    if ($(".input").css("display", "block")) {
+        $(".input").toggle();
+    }
+    if ($("#inputButt").hasClass("clicked2")) {
+        $("#inputButt").toggleClass("clicked2")
+    }
+}
+
 
 function onCompass() {
     offArchive();
     offBle();
-    //offObj();
-    //offInput();
+    offInput();
+    offObj();
     offGyro();
     $("#compassButt").addClass("clicked")
     $(".compass").fadeIn()
@@ -90,8 +107,8 @@ function onCompass() {
 function onArchive() {
     offCompass();
     offBle();
-    //offObj();
-    //offInput();
+    offInput();
+    offInput();
     offGyro();
 
     $("#archiveButt").addClass("clicked")
@@ -104,8 +121,8 @@ function onBle() {
     $("canvas").fadeIn();
     offArchive();
     offCompass;
-    //offObj();
-    //offInput();
+    offInput();
+    offInput();
     offGyro();
     $(".ble").fadeIn();
     $("#bleButt").addClass("clicked")
@@ -117,8 +134,8 @@ function onGyro() {
     offCompass();
     offBle();
     offArchive();
-    // offObj;
-    //offInput();
+    offObj();
+    offInput();
     $(".gyro").fadeIn();
     $("#gyroButt").addClass("clicked")
 
@@ -128,17 +145,26 @@ function onGyro() {
 
 
 function onObj() {
-    //offInput();
+    offInput();
     $(".objective").toggle();
     $("#objButt").toggleClass("clicked2")
+    offInput()
+
 }
 
 function onInput() {
-    // offObj;
+    offObj();
     $(".input").toggle();
+
     $("#inputButt").toggleClass("clicked2")
 
+    offObj()
+
 }
+
+
+
+
 
 
 
@@ -150,8 +176,8 @@ function checkCheck() { //check at what point u are and routing
     let valueTool = Cookies.get("tool");
     if (valueTool == "compass") {
         onCompass()
-            // offObj()
-            // offInput()
+        offObj();
+        offInput();
 
     }
 
@@ -160,8 +186,8 @@ function checkCheck() { //check at what point u are and routing
         offCompass()
         offGyro()
         offBle()
-            // offObj()
-            // offInput()
+        offObj();
+        offInput();
     }
 
     if (valueTool == "ble") {
@@ -169,16 +195,16 @@ function checkCheck() { //check at what point u are and routing
         offCompass()
         offArchive()
         offGyro()
-            // offObj()
-            // offInput()
+        offObj();
+        offInput();
     }
     if (valueTool == "gyro") {
         onGyro()
         offCompass()
         offArchive()
         offBle()
-            // offObj()
-            // offInput()
+        offObj();
+        offInput();
     }
 
 
@@ -200,6 +226,20 @@ for (var i = 0; i < btns.length; i++) {
     });
 }
 
+function checkButton() {
+    if (currentLev == 4) {
+        $("input").css("display", "none");
+        $("#button").css("display", "none");
+        // for (let x = 0; x < 4; x++) {
+        //     let i = localStorage.getItem(x);
+        //     document.getElementById("textRiddle").innerHTML += i.toString()
+        // }
+
+    }
+    document.getElementById("textRiddle").innerHTML = rid[currentLev];
+
+
+}
 
 
 input.addEventListener('keypress', function(ev) {
@@ -219,5 +259,8 @@ function getInputValue() {
 
         checkItem()
         checkCheck()
+        checkButton()
     }
 }
+
+checkButton()
