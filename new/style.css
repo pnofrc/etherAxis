@@ -488,3 +488,22 @@ canvas {
 #recorderLevel {
     display: none;
 }
+
+.recorder {
+    height: 100%;
+    width: 100%;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+}
+
+#arch {
+    position: absolute;
+    bottom: 5vw;
+    width: 50%;
+    left: 25%;
+    height: 10%;
+    display: none;
+}

@@ -1,12 +1,19 @@
+if (currentLev == 2) {
+    $("#recorderLevel").fadeIn()
+}
+
 function next() {
     $(".uploaded").fadeIn()
     $(".recorder").fadeOut()
+
 }
 
 function back() {
     $(".uploaded").fadeOut()
     $(".recorder").fadeIn()
 }
+
+if (currentLev > 2) { $("#arch").fadeIn() }
 
 
 //webkitURL is deprecated but nevertheless
@@ -137,6 +144,7 @@ function createDownloadLink(blob) {
     upload.href = "#";
     upload.innerHTML = "Upload";
     upload.addEventListener("click", function(event) {
+
         var xhr = new XMLHttpRequest();
         xhr.onload = function(e) {
             if (this.readyState === 4) {
@@ -148,12 +156,6 @@ function createDownloadLink(blob) {
         xhr.open("POST", "./upload.php", true);
         xhr.send(fd);
         $("#arch").fadeIn();
-
-
-
-
-
-
 
     })
     li.appendChild(document.createTextNode(" ")) //add a space in between

@@ -41,34 +41,34 @@
             <div class="archive">
                 <div class="recorder">
 
-            <div id="controls">
-                <button id="recordButton" onclick="startConverting(0)">Record</button>
-                <button id="stopButton" onclick="startConverting(1)" disabled>Stop</button>
-            </div>
+                    <div id="controls">
+                        <button id="recordButton" onclick="startConverting(0)">Record</button>
+                        <button id="stopButton" onclick="startConverting(1)" disabled>Stop</button>
+                    </div>
 
-            <div id="process"></div>
-            <ol id="recordingsList"></ol>
+                    <div id="process"></div>
+                    <ol id="recordingsList"></ol>
 
-            <br><br>
+                    <br><br>
 
-            <button id="arch" onclick=next()>to Archive</button>
+                    <button id="arch" onclick=next()>to Archive</button>
 
-            </div>
+                </div>
 
-            <div class="uploaded">
-            <?php 
-                error_reporting(0);
-                $fs = preg_grep('/^([^.])/', scandir('../ether_archive')); 
-                foreach ($fs as $fileCurr) {
-                    $filePath = $fileCurr;
-                    $date = date("F d Y", fileatime($fileCurr));
-                    echo "<span><a href='../ether_archive/$filePath' title='$filecurr'>$fileCurr</a></span><br><span>$date</span><hr>";
-                }  
-                
-                ?>
-                <button onclick="back()">back to recorder</button>
-                <button id="recorderLevel" onclick="quest()">Finish level</button>
-            </div>
+                <div class="uploaded">
+                    <?php 
+                        error_reporting(0);
+                        $fs = preg_grep('/^([^.])/', scandir('../ether_archive')); 
+                        foreach ($fs as $fileCurr) {
+                            $filePath = $fileCurr;
+                            $date = date("F d Y", fileatime($fileCurr));
+                            echo "<span><a href='../ether_archive/$filePath' title='$filecurr'>$fileCurr</a></span><br><span>$date</span><hr>";
+                        }  
+                        
+                        ?>
+                    <button onclick="back()">back to recorder</button>
+                    <button id="recorderLevel" onclick="quest()" >Finish level</button>
+                </div>
             </div>
 
            
@@ -79,7 +79,7 @@
             </div>
             
             <div class="gyro">
-                <button onclick="quest()"></button>
+                <button id="fakeGyro" onclick="quest()"></button>
             </div>
 
             <div class="objective">

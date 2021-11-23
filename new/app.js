@@ -33,8 +33,26 @@ if (len == 0) {
 var currentLev = Cookies.get("level");
 console.log(currentLev)
 
+function deleteButton() {
 
-$("#nMap").text(coord[currentLev][2])
+    if (currentLev == 1) {
+        console.log(currentLev)
+        $("#fakeGyro").fadeIn(1)
+    } else {
+
+        $("#fakeGyro").fadeOut(1)
+    }
+    if (currentLev == 2) {
+        $("#recordLevel").fadeOut(1)
+    } else {
+        $("#recordLevel").fadeIn(1)
+
+    }
+
+}
+deleteButton()
+
+
 
 function offCompass() {
     $(".compass").fadeOut(1)
@@ -84,7 +102,9 @@ function offInput() {
 
 function onCompass() {
 
-    console.log(currentLev)
+    $("#nMap").text(coord[currentLev][2])
+
+    console.log(coord[currentLev])
     offArchive();
     offBle();
     offInput();
@@ -111,7 +131,7 @@ function onArchive() {
 }
 
 function onBle() {
-    $("canvas").fadeIn(600);
+
     offArchive();
     offCompass;
     offInput();
@@ -233,6 +253,8 @@ function checkButton() {
         // }
 
     }
+
+
     document.getElementById("textRiddle").innerHTML = rid[currentLev];
 
 
@@ -257,9 +279,8 @@ function getInputValue() {
         Cookies.set(item[currentLev], "1")
         checkItem();
         // $(".popup").slideDown(1000);
-        cookie = Cookies.get()
+        deleteButton()
         instructionLevel()
-
     }
 }
 
@@ -278,6 +299,8 @@ document.getElementById("adelante").addEventListener("click", function() {
 
     checkItem()
     checkCheck()
+
+    $("#recorderLevel").fadeOut()
 
 
 })
@@ -299,23 +322,21 @@ checkButton()
 
 
 function choose(x) {
+    deleteButton()
     localStorage.setItem(currentLev, x)
-
-    change = currentLev++;
+    console.log(currentLev)
+    currentLev++;
     console.log(currentLev)
     onCompass()
     Cookies.set('level', currentLev);
-    console.log(currentLev)
-        // checkButton()
     Cookies.remove("bridge")
     $(".popup").slideUp(300);
-    document.getElementById("popupButton").innerHTML = ''
-
-
+    document.getElementById("popupButton").innerHTML = '';
 
 }
 
 function checkItem() {
+    console.log('si')
     if (Cookies.get('gyro')) {
         $("#gyroButt").prop('disabled', false)
     } else {}
@@ -328,7 +349,7 @@ function checkItem() {
         $("#bleButt").prop('disabled', false)
 
     } else {}
-    console.log('si')
+
 
 }
 
@@ -338,6 +359,10 @@ function instructionLevel() {
     $("#button").fadeOut(1)
 
     currentLev = Cookies.get("level")
+
+    deleteButton()
+
+
     document.getElementById("textRiddle").innerHTML = instru[currentLev]
 
     if (currentLev == 0) {
@@ -346,21 +371,25 @@ function instructionLevel() {
 
     // checkCookie()
 
-
-
-
     Cookies.set("bridge", "")
 
     checkItem()
+    $("#recorderLevel").fadeOut()
+
 }
+
+$("#recorderLevel").addEventListener("click", function() {
+    $("#uploaded").fadeOut()
+    $("#recorder").fadeIn()
+
+})
+
 
 function quest() {
 
     $("#adelante").fadeOut(1)
 
     document.getElementById("popupText").innerHTML = `${qq[currentLev]}<br>`
-
-
 
     for (let x = 0; x < 2; x++) {
         document.getElementById("popupButton").innerHTML += `<button onclick="choose(${x})">${quests[currentLev][x]}</button><br>`

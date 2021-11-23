@@ -55,6 +55,7 @@ function setup() {
 }
 
 function connectToBle() {
+    $("canvas").fadeIn(600);
     // Connect to a device by passing the service UUID
 
     // myBLE.connect(serviceUuid, gotCharacteristics);
@@ -135,6 +136,10 @@ function anim() {
 
     //
     angleRad += 10;
+    if (angleRad > 3500) {
+        noLoop()
+        quest()
+    }
 
     /*
     //HIGHER VALUE LONGER ANIMATION
