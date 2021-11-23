@@ -118,6 +118,9 @@ function onCompass() {
 }
 
 function onArchive() {
+    if (currentLev == 2) {
+        $("#recorderLevel").fadeIn()
+    }
     offCompass();
     offBle();
     offInput();

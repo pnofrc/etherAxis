@@ -1,7 +1,3 @@
-if (currentLev == 2) {
-    $("#recorderLevel").fadeIn()
-}
-
 function next() {
     $(".uploaded").fadeIn()
     $(".recorder").fadeOut()
