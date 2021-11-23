@@ -145,7 +145,7 @@
 
  
 <script defer async>
-    $(".popup").slideDown();
+    $(".popup").slideDown(1000);
 </script>
 
 
