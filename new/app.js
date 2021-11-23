@@ -216,13 +216,10 @@ checkCheck()
 
 var btnContainer = document.getElementById("menu");
 var btns = btnContainer.getElementsByClassName("menuButt");
-console.log(btns.length)
 for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function() {
         $(".clicked").removeClass();
         this.className += " clicked";
-        console.log(this.className)
-        console.log('oao')
     });
 }
 

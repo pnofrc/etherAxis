@@ -55,6 +55,7 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     margin: auto;
     display: none;
+    z-index: 0;
 }
 
 .compass>.arrow {
@@ -273,6 +274,8 @@ button {
 
 .archive {
     display: none;
+    position: relative;
+    z-index: 1;
 }
 
 .clicked {
@@ -434,4 +437,16 @@ canvas {
 
 .uploaded {
     display: none
+}
+
+.popup {
+    border: solid black 2px;
+    border-radius: 15px;
+    position: fixed;
+    margin: 2% 10%;
+    width: 80%;
+    height: 96%;
+    background-color: rgba(33, 150, 66, 0.514);
+    z-index: 200;
+    display: none;
 }

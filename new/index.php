@@ -19,6 +19,10 @@
 </head>
 
 <body>
+<div class="popup">
+
+</div>
+
     <div class='container'></div>
     <div id="main">
         <div id="main-content">
@@ -140,7 +144,9 @@
     <!-- <script src="dictio.js" ></script> -->
 
  
-
+<script defer async>
+    $(".popup").slideDown();
+</script>
 
 
 
