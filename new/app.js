@@ -307,7 +307,7 @@ function choose(x) {
         // checkButton()
     Cookies.remove("bridge")
     $(".popup").slideUp(300);
-
+    document.getElementById("popupButton").innerHTML = ''
 
 
 
@@ -370,7 +370,7 @@ function quest() {
     $("#afterZero").fadeOut(1)
     $("#input").fadeIn(1)
     $("#button").fadeIn(1)
-    document.getElementById("popupButton").innerHTML = ''
+
 
 
 
