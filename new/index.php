@@ -20,7 +20,9 @@
 
 <body>
 <div class="popup">
-
+<div id="popupText"></div>
+<div id="popupButton"></div>
+<button id="adelante">Continue</button>
 </div>
 
     <div class='container'></div>
@@ -49,7 +51,7 @@
 
             <br><br>
 
-            <button id="arch" onclick=next()>Next</button>
+            <button id="arch" onclick=next()>to Archive</button>
 
             </div>
 
@@ -62,7 +64,10 @@
                     $date = date("F d Y", fileatime($fileCurr));
                     echo "<span><a href='../ether_archive/$filePath' title='$filecurr'>$fileCurr</a></span><br><span>$date</span><hr>";
                 }  
+                
                 ?>
+                <button onclick="back()">back to recorder</button>
+                <button id="recorderLevel" onclick="quest()">Finish level</button>
             </div>
             </div>
 
@@ -70,7 +75,11 @@
 
             <div class="ble">
                 <button id="connection" onclick="connectToBle()">Connect</button>
-                <canvas class="p5Canvas"></canvas>
+                <!-- <canvas class="p5Canvas"></canvas> -->
+            </div>
+            
+            <div class="gyro">
+                <button onclick="quest()"></button>
             </div>
 
             <div class="objective">
@@ -79,9 +88,11 @@
             </div>
 
             <div class="input">
+                
                 <p id="textRiddle"></p>
-                <input type="text" placeholder="Type " id="input">
+                <input type="text" placeholder="password " value="" id="input">
                 <button id="button" type="button" onclick="getInputValue();">check</button>
+                <button id="afterZero" onclick="quest()">Continue</button>
             </div>
 
         </div>
@@ -134,6 +145,10 @@
     <div id="questIndex">
 
     </div>
+
+    <script>
+        
+    </script>
     <script src="https://hub.xpub.nl/etheraxis/pad/p/dictio/export/txt"></script>
     <script src="app.js"></script>
     <script src="compass_app.js" ></script>
@@ -144,9 +159,7 @@
     <!-- <script src="dictio.js" ></script> -->
 
  
-<script defer async>
-    $(".popup").slideDown(1000);
-</script>
+
 
 
 

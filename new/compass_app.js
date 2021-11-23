@@ -1,10 +1,15 @@
-var currentLev
+// let currentLev
 
 
 
-console.log(coord[currentLev])
+
 var latGoal = coord[currentLev][0]
 var lngGoal = coord[currentLev][1]
+
+console.log(coord[currentLev])
+
+
+
 
 const compassCircle = document.querySelector(".compass-circle");
 const myPoint = document.querySelector(".my-point");

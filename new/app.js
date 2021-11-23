@@ -2,71 +2,59 @@ $("#gyroButt").prop('disabled', true)
 $("#archiveButt").prop('disabled', true)
 $("#bleButt").prop('disabled', true)
 
+// var change = 0
+
 
 let cookie = Cookies.get();
 let current = Object.keys(cookie);
 let len = current.length
-    // $("canvas").slideUp();
+
+
+
 
 
 if (len == 0) {
     Cookies.set('level', 0)
     Cookies.set('tool', "compass")
-    checkItem()
-        // $(".compass").fadeIn()
-        // $("#compassButt").addClass("clicked")
+    Cookies.set("compass", '1')
+    checkItem();
+
+
+    // instructionLevel();
+    // $(".compass").fadeIn()
+    // $("#compassButt").addClass("clicked")
 } else {
     checkItem()
     checkCheck()
-}
-
-
-function checkItem() {
-    if (Cookies.get('gyro')) {
-        $("#gyroButt").prop('disabled', false)
-    } else {}
-    if (Cookies.get("archive")) {
-        $("#archiveButt").prop('disabled', false)
-
-    } else {}
-    if (Cookies.get("ble")) {
-
-        $("#bleButt").prop('disabled', false)
-
-    } else {}
-
-
 
 }
+var currentLev = Cookies.get("level");
+console.log(currentLev)
 
 
-
-currentLev = Cookies.get("level");
-$("#text").text(narration[currentLev])
-$("#text2").text(text[currentLev])
 $("#nMap").text(coord[currentLev][2])
 
 function offCompass() {
-    $(".compass").fadeOut()
+    $(".compass").fadeOut(1)
     $("#compassButt").removeClass("clicked")
 }
 
 function offArchive() {
-    $(".archive").fadeOut()
+    $(".archive").fadeOut(1)
     $("#archiveButt").removeClass("clicked")
 
 }
 
 function offBle() {
-    $(".ble").fadeOut();
-    $("canvas").fadeOut();
+    $(".ble").fadeOut(1);
+    $("canvas").fadeOut(1);
     $("#bleButt").removeClass("clicked")
 
 }
 
 
 function offGyro() {
-    $(".gyro").fadeOut();
+    $(".gyro").fadeOut(1);
     $("#gyroButt").removeClass("clicked")
 
 
@@ -93,15 +81,18 @@ function offInput() {
 
 
 function onCompass() {
+
+    console.log(currentLev)
     offArchive();
     offBle();
     offInput();
     offObj();
     offGyro();
     $("#compassButt").addClass("clicked")
-    $(".compass").fadeIn()
+    $(".compass").fadeIn(600)
 
     Cookies.set("tool", "compass");
+    // console.log("compass ", coord[currentLev])
 }
 
 function onArchive() {
@@ -112,19 +103,19 @@ function onArchive() {
     offGyro();
 
     $("#archiveButt").addClass("clicked")
-    $(".archive").fadeIn()
+    $(".archive").fadeIn(600)
 
     Cookies.set("tool", "archive");
 }
 
 function onBle() {
-    $("canvas").fadeIn();
+    $("canvas").fadeIn(600);
     offArchive();
     offCompass;
     offInput();
     offInput();
     offGyro();
-    $(".ble").fadeIn();
+    $(".ble").fadeIn(600);
     $("#bleButt").addClass("clicked")
 
     Cookies.set("tool", "ble");
@@ -136,7 +127,7 @@ function onGyro() {
     offArchive();
     offObj();
     offInput();
-    $(".gyro").fadeIn();
+    $(".gyro").fadeIn(600);
     $("#gyroButt").addClass("clicked")
 
     Cookies.set("tool", "gyro");
@@ -145,20 +136,27 @@ function onGyro() {
 
 
 function onObj() {
+    $("#text").text(narration[currentLev])
+    $("#text2").text(text[currentLev])
     offInput();
-    $(".objective").toggle();
+    $(".objective").slideToggle(800);
     $("#objButt").toggleClass("clicked2")
-    offInput()
 
 }
 
 function onInput() {
+
     offObj();
-    $(".input").toggle();
+    checkButton()
+
+    if (Cookies.get("bridge") == '') {
+        instructionLevel()
+    }
+    $(".input").slideToggle(800);
+
 
     $("#inputButt").toggleClass("clicked2")
 
-    offObj()
 
 }
 
@@ -242,22 +240,138 @@ function checkButton() {
 input.addEventListener('keypress', function(ev) {
     if (ev.keyCode === 13 || ev.which === 13) {
         getInputValue()
+        $('input[type="text"]').val('');
     }
 });
 
+
 function getInputValue() {
-    let inputVal = document.getElementById("input").value;
+
+    let input = document.getElementById("input")
+    let inputVal = input.value;
     inputVal = inputVal.toLowerCase()
     if (inputVal == password[currentLev]) {
-        Cookies.set(item[currentLev], 1);
-        Cookies.set('tool', item[currentLev]);
-        (console.log(currentLev++))
-        Cookies.set('level', currentLev);
+        Cookies.set("bridge")
+        Cookies.set(item[currentLev], "1")
+        checkItem();
+        // $(".popup").slideDown(1000);
+        cookie = Cookies.get()
+        instructionLevel()
 
-        checkItem()
-        checkCheck()
-        checkButton()
     }
 }
 
+document.getElementById("adelante").addEventListener("click", function() {
+
+
+    if (currentLev == 0) {
+        quest()
+
+    } else {
+        Cookies.set('tool', item[currentLev]);
+        Cookies.set(item[currentLev], 1);
+        $(".popup").slideUp(1000);
+
+    }
+
+    checkItem()
+    checkCheck()
+
+
+})
+
+// function bridge() {
+//     $(".popupText").text = quest[currentLev]
+//     $(".popup").slideDown(1000);
+//     Cookies.set('bridge')
+// }
+
+input.addEventListener("click", function() {
+    $('input[type="text"]').val('');
+})
+
 checkButton()
+
+
+
+
+
+function choose(x) {
+    localStorage.setItem(currentLev, x)
+
+    change = currentLev++;
+    console.log(currentLev)
+    onCompass()
+    Cookies.set('level', currentLev);
+    console.log(currentLev)
+        // checkButton()
+    Cookies.remove("bridge")
+    $(".popup").slideUp(300);
+
+
+
+
+}
+
+function checkItem() {
+    if (Cookies.get('gyro')) {
+        $("#gyroButt").prop('disabled', false)
+    } else {}
+    if (Cookies.get("archive")) {
+        $("#archiveButt").prop('disabled', false)
+
+    } else {}
+    if (Cookies.get("ble")) {
+
+        $("#bleButt").prop('disabled', false)
+
+    } else {}
+    console.log('si')
+
+}
+
+
+function instructionLevel() {
+    $("#input").fadeOut(1)
+    $("#button").fadeOut(1)
+
+    currentLev = Cookies.get("level")
+    document.getElementById("textRiddle").innerHTML = instru[currentLev]
+
+    if (currentLev == 0) {
+        $("#afterZero").fadeIn(1)
+    }
+
+    // checkCookie()
+
+
+
+
+    Cookies.set("bridge", "")
+
+    checkItem()
+}
+
+function quest() {
+
+    $("#adelante").fadeOut(1)
+
+    document.getElementById("popupText").innerHTML = `${qq[currentLev]}<br>`
+
+
+
+    for (let x = 0; x < 2; x++) {
+        document.getElementById("popupButton").innerHTML += `<button onclick="choose(${x})">${quests[currentLev][x]}</button><br>`
+        console.log(quests[currentLev][x])
+    }
+
+    $(".popup").slideDown(1000);
+
+    $("#afterZero").fadeOut(1)
+    $("#input").fadeIn(1)
+    $("#button").fadeIn(1)
+    document.getElementById("popupButton").innerHTML = ''
+
+
+
+}

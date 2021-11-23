@@ -3,6 +3,12 @@ function next() {
     $(".recorder").fadeOut()
 }
 
+function back() {
+    $(".uploaded").fadeOut()
+    $(".recorder").fadeIn()
+}
+
+
 //webkitURL is deprecated but nevertheless
 URL = window.URL || window.webkitURL;
 

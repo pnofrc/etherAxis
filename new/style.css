@@ -146,6 +146,18 @@ ul {
     z-index: 0;
 }
 
+.gyro {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    display: none;
+}
+
+.gyro button {
+    width: 40%;
+    height: 5%;
+}
+
 #narration {
     width: 100%;
     height: 100%;
@@ -369,20 +381,21 @@ button {
 .input {
     /* background-color: rgb(219, 223, 219); */
     background-color: rgba(141, 182, 59, 0.644);
-    margin: 5px 5px;
     border-radius: 10px;
-    border-color: rgba(132, 138, 132, 0.864);
-    border-width: 1.5px;
-    border-style: solid;
-    border-radius: 4px;
+    /* border-width: 1.5px; */
+    /* border-style: solid;
+    /* border-radius: 4px; */
     display: none;
-    min-width: 90%;
+    width: 94%;
     height: 50%;
-    z-index: 20;
-    position: absolute;
-    top: 2%;
-    left: 4%;
-    filter: drop-shadow(0 0 0.25rem var(--midnight));
+    /* z-index: 20; */
+    position: fixed;
+    /* filter: drop-shadow(0 0 0.25rem var(--midnight)); */
+    z-index: 50;
+}
+
+.objective {
+    overflow-y: scroll;
 }
 
 .input button {
@@ -408,8 +421,8 @@ button {
 
 canvas {
     position: absolute;
-    /* display: none; */
-    z-index: 2;
+    display: none;
+    z-index: 0;
 }
 
 #menu {
@@ -449,4 +462,25 @@ canvas {
     background-color: rgba(33, 150, 66, 0.514);
     z-index: 200;
     display: none;
+}
+
+.popupButton {
+    display: flex;
+}
+
+#adelante {
+    width: 60%;
+    height: 7%;
+    position: absolute;
+    margin-left: 20%;
+    bottom: 7%;
+}
+
+#afterZero {
+    display: none;
+    width: 30%;
+    height: 3%;
+    position: absolute;
+    margin-left: 35%;
+    bottom: 2%;
 }
