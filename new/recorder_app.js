@@ -34,47 +34,20 @@ stopButton.addEventListener("click", stopRecording);
 function startRecording() {
     console.log("recordButton clicked");
 
-    /*
-    	Simple constraints object, for more advanced audio features see
-    	https://addpipe.com/blog/audio-constraints-getusermedia/
-    */
-
     var constraints = { audio: true, video: false }
-
-    /*
-    	Disable the record button until we get a success or fail from getUserMedia() 
-	*/
 
     recordButton.disabled = true;
     stopButton.disabled = false;
 
-    /*
-    	We're using the standard promise based getUserMedia() 
-    	https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
-	*/
-
     navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
         console.log("getUserMedia() success, stream created, initializing Recorder.js ...");
 
-        /*
-        	create an audio context after getUserMedia is called
-        	sampleRate might change after getUserMedia is called, like it does on macOS when recording through AirPods
-        	the sampleRate defaults to the one set in your OS for your playback device
-
-        */
         audioContext = new AudioContext();
 
-
-        /*  assign to gumStream for later use  */
         gumStream = stream;
 
-        /* use the stream */
         input = audioContext.createMediaStreamSource(stream);
 
-        /* 
-        	Create the Recorder object and configure to record mono sound (1 channel)
-        	Recording 2 channels  will double the file size
-        */
         rec = new Recorder(input, { numChannels: 1 })
 
         //start the recording process
@@ -83,7 +56,6 @@ function startRecording() {
         console.log("Recording started");
 
     }).catch(function(err) {
-        //enable the record button if getUserMedia() fails
         recordButton.disabled = false;
         stopButton.disabled = true;
     });
@@ -97,7 +69,6 @@ function stopRecording() {
     stopButton.disabled = true;
     recordButton.disabled = false;
 
-
     //tell the recorder to stop the recording
     rec.stop();
 
@@ -109,7 +80,6 @@ function stopRecording() {
 }
 
 function createDownloadLink(blob) {
-
     var url = URL.createObjectURL(blob);
     var au = document.createElement('audio');
     var li = document.createElement('li');
@@ -122,19 +92,8 @@ function createDownloadLink(blob) {
     au.controls = true;
     au.src = url;
 
-    //save to disk link
-    // link.href = url;
-    // link.download = filename + ".wav"; //download forces the browser to donwload the file using the  filename
-    // link.innerHTML = "Save to disk";
-
     //add the new audio element to li
     li.appendChild(au);
-
-    //add the filename to the li
-    // li.appendChild(document.createTextNode(filename + ".wav "))
-
-    //add the save to disk link to li
-    // li.appendChild(link);
 
     //upload link
     var upload = document.createElement('a');

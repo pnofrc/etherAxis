@@ -1,15 +1,5 @@
-// let currentLev
-
-
-
-
 var latGoal = coord[currentLev][0]
 var lngGoal = coord[currentLev][1]
-
-console.log(coord[currentLev])
-
-
-
 
 const compassCircle = document.querySelector(".compass-circle");
 const myPoint = document.querySelector(".my-point");
@@ -28,8 +18,6 @@ function init() {
         window.addEventListener("deviceorientationabsolute", handler, true);
     }
 }
-
-
 
 function startCompass() {
     if (isIOS) {
@@ -60,13 +48,7 @@ function locationHandler(position) {
     if (pointDegree < 0) {
         pointDegree = pointDegree + 360;
     }
-
-
 }
-
-
-
-
 
 function calcDegreeToPoint(latitude, longitude, latGoal, lngGoal) {
     const phiK = (latGoal * Math.PI) / 180.0;
