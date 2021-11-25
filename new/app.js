@@ -34,9 +34,9 @@ function deleteButton() {
         $("#fakeGyro").fadeOut(1)
     }
     if (currentLev == 2) {
-        $("#recordLevel").fadeOut(1)
+        $("#recorderLevel").fadeIn(1)
     } else {
-        $("#recordLevel").fadeIn(1)
+        $("#recorderLevel").fadeOut(1)
     }
 }
 deleteButton()
@@ -101,7 +101,7 @@ function onCompass() {
 
 function onArchive() {
     if (currentLev == 2) {
-        $("#recordLevel").fadeIn()
+        $("#recorderLevel").fadeIn()
     }
     offCompass();
     offBle();
@@ -216,6 +216,7 @@ function checkButton() {
     if (currentLev == 4) {
         $("input").css("display", "none");
         $("#button").css("display", "none");
+        $("#bridgecard").fadeIn(5000)
     }
 
     document.getElementById("textRiddle").innerHTML = rid[currentLev];
@@ -242,25 +243,12 @@ function getInputValue() {
         // $(".popup").slideDown(1000);
         deleteButton()
         instructionLevel()
+
+    } else {
+        alert("That's wrong! Try again")
     }
 }
 
-
-// TO SEE IF IT NEEDED!!!
-document.getElementById("adelante").addEventListener("click", function() {
-    if (currentLev == 0) {
-        quest()
-    } else {
-        Cookies.set('tool', item[currentLev]);
-        Cookies.set(item[currentLev], 1);
-        $(".popup").slideUp(1000);
-    }
-
-    checkItem()
-    checkCheck()
-
-    $("#recorderLevel").fadeOut()
-})
 
 // IF TAP ON INPUT, TEXT REMOVE
 input.addEventListener("click", function() {
@@ -268,20 +256,6 @@ input.addEventListener("click", function() {
 })
 
 
-
-// choose answer
-function choose(x) {
-    deleteButton()
-    localStorage.setItem(currentLev, x)
-    console.log(currentLev)
-    currentLev++;
-    console.log(currentLev)
-    onCompass()
-    Cookies.set('level', currentLev);
-    Cookies.remove("bridge")
-    $(".popup").slideUp(300);
-    document.getElementById("popupButton").innerHTML = '';
-}
 
 // to unblock unblocked tools
 function checkItem() {
@@ -321,29 +295,57 @@ function instructionLevel() {
     $("#recorderLevel").fadeOut()
 }
 
-$("#recordLevel").addEventListener("click", function() {
+$("#recorderLevel").addEventListener("click", function() {
     $("#uploaded").fadeOut()
     $("#recorder").fadeIn()
 })
 
 //ask question
 function quest() {
-    $("#adelante").fadeOut(1)
-
     document.getElementById("popupText").innerHTML = `${qq[currentLev]}<br>`
-
-    for (let x = 0; x < 2; x++) {
-        document.getElementById("popupButton").innerHTML += `<button onclick="choose(${x})">${quests[currentLev][x]}</button><br>`
-        console.log(quests[currentLev][x])
-    }
-
     $(".popup").slideDown(1000);
     $("#afterZero").fadeOut(1)
+}
+
+
+// choose answer
+function answer() {
+    deleteButton()
+    let inp = document.getElementById("answerInput")
+    let inpVal = inp.value;
+    localStorage.setItem(qq[currentLev], inpVal)
+    console.log(localStorage.getItem(currentLev))
+    currentLev++;
+    console.log(currentLev)
+    onCompass()
+    Cookies.set('level', currentLev);
+    Cookies.remove("bridge")
+    $(".popup").slideUp(1000);
     $("#input").fadeIn(1)
     $("#button").fadeIn(1)
+    document.getElementById("popupButton").innerHTML = '';
+    showAnswer()
+    if (currentLev == 4) {
+        $("#bridgecard").fadeIn(5000)
+    }
 }
 
 function recooooooord() {
     quest()
     back()
+}
+
+function showAnswer() {
+    let questions = Object.keys(localStorage);
+    let answers = Object.values(localStorage);
+    console.log(questions)
+
+    for (let print = 0; print < questions.length; print++) {
+        document.getElementById("popupText").innerHTML +=
+            `<p>${questions[print]}</p>
+            <i>${answers[print]}</i><br>`
+    }
+    $("#finalBack").fadeIn(1)
+    $("#adelante").fadeOut(1)
+    $(".popup").fadeIn(2000)
 }

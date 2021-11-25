@@ -410,9 +410,13 @@ button {
     width: 75%;
 }
 
-#bridgecard-code {
+#bridgecard {
+    width: 70%;
+    margin-left: 15%;
     text-align: center;
     font-size: 1.2em;
+    border: saddlebrown;
+    display: none;
 }
 
 .ble {
@@ -459,7 +463,8 @@ canvas {
     margin: 2% 10%;
     width: 80%;
     height: 96%;
-    background-color: rgba(33, 150, 66, 0.514);
+    background-color: rgba(8, 8, 8, 0.411);
+    color: #0f0;
     z-index: 200;
     display: none;
 }
@@ -468,21 +473,29 @@ canvas {
     display: flex;
 }
 
-#adelante {
+#popupText {
+    padding: 20px;
+    font-size: 14px;
+}
+
+#adelante,
+#answerInput,
+#finalBack {
     width: 60%;
     height: 7%;
-    position: absolute;
+    /* position: absolute; */
     margin-left: 20%;
-    bottom: 7%;
+    margin-bottom: 10%;
 }
 
 #afterZero {
     display: none;
     width: 30%;
-    height: 3%;
-    position: absolute;
-    margin-left: 35%;
-    bottom: 2%;
+    font-size: 14px;
+    height: 10%;
+    position: relative;
+    /* margin-left: 35%; */
+    /* bottom: 2%; */
 }
 
 #recorderLevel {
@@ -505,5 +518,9 @@ canvas {
     width: 50%;
     left: 25%;
     height: 10%;
+    display: none;
+}
+
+#finalBack {
     display: none;
 }

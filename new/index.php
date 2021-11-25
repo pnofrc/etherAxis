@@ -21,8 +21,10 @@
 <body>
 <div class="popup">
 <div id="popupText"></div>
-<div id="popupButton"></div>
-<button id="adelante">Continue</button>
+<!-- <div id="popupButton"></div> -->
+<div><input type="text" placeholder="Enter your answer " value="" id="answerInput">
+<button onclick="answer()" id="adelante">Continue</button></div>
+<button onclick="$('.popup').slideUp(3000)" id="finalBack">Back</button></div>
 </div>
 
     <div class='container'></div>
@@ -140,11 +142,9 @@
 
     </div>
 
-    <p id="bridgecard-code">bridges: -----</p>
+    <button onclick="showAnswer()" id="bridgecard"><i>Answers</i></button>
 
-    <div id="questIndex">
 
-    </div>
 
     <script>
         
