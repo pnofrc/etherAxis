@@ -617,7 +617,8 @@ canvas {
     height: 40%;
     position: absolute;
     left: 20%;
-    bottom: 30%
+    bottom: 30%;
+    display: none;
 }
 
 #b3 {
@@ -627,6 +628,7 @@ canvas {
     position: absolute;
     right: 10%;
     bottom: 1%;
+    display: none;
 }
 
 #b4 {
@@ -634,6 +636,7 @@ canvas {
     width: 15%;
     height: 30%;
     position: absolute;
-    right: 10%;
-    top: 5%
+    bottom: 10%;
+    left: 70%;
+    display: none;
 }
