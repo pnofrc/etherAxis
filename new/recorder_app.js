@@ -33,7 +33,7 @@ stopButton.addEventListener("click", stopRecording);
 
 function startRecording() {
     $("#stopButton").css("border", "solid")
-    $(".archive").addClass("glow")
+    $(".archive").addClass("rec")
     console.log("recordButton clicked");
 
     var constraints = { audio: true, video: false }
@@ -66,7 +66,7 @@ function startRecording() {
 
 function stopRecording() {
     $("#stopButton").css("border", "none")
-    $(".archive").removeClass("glow")
+    $(".archive").removeClass("rec")
 
     console.log("stopButton clicked");
 
