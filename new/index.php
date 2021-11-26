@@ -15,6 +15,7 @@
     <script src="../script/p5.ble.js"></script>
     <script src="../script/recorder.js"></script>
     <script src="p5.func.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 
 </head>
 
@@ -81,6 +82,9 @@
             </div>
             
             <div class="gyro">
+                    
+                <div id="gyro1" data-depth="0.2"></div>
+                <div id="gyro2" data-depth="0.6"></div>
                 <button id="fakeGyro" onclick="quest()"></button>
             </div>
 
@@ -155,15 +159,8 @@
     <script src="./recorder_app.js"></script>
     <script src="./ble.js" ></script>
 
-  
+
     <!-- <script src="dictio.js" ></script> -->
-
- 
-
-
-
-
-
 
 </body>
 </html>

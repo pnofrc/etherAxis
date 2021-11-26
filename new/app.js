@@ -361,3 +361,12 @@ function showAnswer() {
     $("#adelante").fadeOut(1)
     $(".popup").fadeIn(2000)
 }
+
+
+
+var scene = document.getElementsByClassName('gyro')[0];
+var parallaxInstance = new Parallax(scene, {
+    relativeInput: true
+});
+
+parallaxInstance.friction(0.2, 0.2);
