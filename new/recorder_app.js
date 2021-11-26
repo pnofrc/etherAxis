@@ -32,6 +32,9 @@ recordButton.addEventListener("click", startRecording);
 stopButton.addEventListener("click", stopRecording);
 
 function startRecording() {
+    $("#stopButton").css("border", "solid red 2px")
+    $(".recorder").css("-webkit-animation", "glowing 0.5s ease-in-out infinite alternate")
+
     console.log("recordButton clicked");
 
     var constraints = { audio: true, video: false }
@@ -63,6 +66,9 @@ function startRecording() {
 
 
 function stopRecording() {
+    $("#stopButton").css("border", "none")
+    $(".recorder").css("-webkit-animation", "none")
+
     console.log("stopButton clicked");
 
     //disable the stop button, enable the record too allow for new recordings
