@@ -390,7 +390,7 @@ document.getElementById("fakeGyro").addEventListener("click", function() {
 
 function delLayer(e) {
     $('#gyro' + (e - 1)).fadeOut(2000);
-    $('#' + e).fadeOut(2000);
+    $('#b' + e).fadeOut(2000);
 
 }
 
