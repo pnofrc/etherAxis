@@ -555,31 +555,31 @@ button {
 }
 
 #gyro0 {
-    background-color: seagreen;
+    background-color: var(--midnight);
     position: relative;
     z-index: 305;
 }
 
 #gyro1 {
-    background-color: red;
+    background-color: var(--sand);
     position: relative;
     z-index: 304;
 }
 
 #gyro2 {
-    background-color: blue;
+    background-color: var(--vitriol);
     position: relative;
     z-index: 303;
 }
 
 #gyro3 {
-    background-color: yellow;
+    background-color: var(--void);
     position: relative;
     z-index: 302;
 }
 
 #gyro4 {
-    background-color: black;
+    background-color: var(--midnight);
     position: relative;
     z-index: 300;
 }
