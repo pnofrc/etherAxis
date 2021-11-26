@@ -131,7 +131,7 @@
         <div class='row'>
             <div class='column'>
                 <div class='tool'>
-                    <button class="gameButt" id="inputButt" onclick="onInput()"><img class="icon"  src="./assets/compas.png"></button>
+                    <button class="gameButt" id="inputButt" onclick="onInput()"><img class="icon"  src="./assets/input.png"></button>
                 </div>
             </div>
             <div class='column'>
