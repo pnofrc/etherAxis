@@ -465,9 +465,9 @@ canvas {
     border-radius: 15px;
     position: fixed;
     margin: 2% 10%;
-    width: 80%;
+    width: 90%;
     height: 96%;
-    background-color: rgba(8, 8, 8, 0.411);
+    background-color: rgba(8, 8, 8, 0.575);
     color: #0f0;
     z-index: 200;
     display: none;
