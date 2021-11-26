@@ -15,7 +15,7 @@ body {
     padding: 0;
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #DE4E26;
+    background-color: var(--lava);
 }
 
 .container {
@@ -149,13 +149,14 @@ ul {
 .gyro {
     width: 100%;
     height: 100%;
-    background-color: red;
+    /* background-color: red; */
     display: none;
 }
 
 .gyro button {
     width: 40%;
     height: 5%;
+    background-color: var(--lava)
 }
 
 #narration {
@@ -172,9 +173,9 @@ ul {
 
 .glow {
     background-color: rgba(0, 0, 0, 0);
-    -webkit-animation: glowing 1s ease-in-out infinite alternate;
-    -moz-animation: glowing 1s ease-in-out infinite alternate;
-    animation: glowing 1s ease-in-out infinite alternate;
+    -webkit-animation: glowing 0.5s ease-in-out infinite alternate;
+    -moz-animation: glowing 0.5s ease-in-out infinite alternate;
+    animation: glowing 0.5s infinite alternate;
 }
 
 @keyframes glowing {
@@ -227,7 +228,7 @@ ul {
 body {
     background-color: rgba(0, 0, 0, 0.2);
     max-width: 90ch;
-    color: var(--lava);
+    color: var(--midnight);
 }
 
 #riddle {
@@ -302,10 +303,12 @@ button {
     columns: white;
 }
 
-.container {
+
+/* .container {
     margin: 5px;
     background-color: red;
     height: 100%;
+    display: none;
 }
 
 .child {
@@ -313,7 +316,7 @@ button {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-}
+} */
 
 #main {
     height: 50vh;
@@ -388,7 +391,7 @@ button {
 .objective,
 .input {
     /* background-color: rgb(219, 223, 219); */
-    background-color: rgba(141, 182, 59, 0.644);
+    background-color: rgba(61, 59, 182, 0.644);
     border-radius: 10px;
     /* border-width: 1.5px; */
     /* border-style: solid;
@@ -413,8 +416,8 @@ button {
 }
 
 .archive button {
-    height: 5%;
-    font-size: 10%;
+    height: 10%;
+    font-size: 20px;
     width: 75%;
 }
 
@@ -467,7 +470,7 @@ button {
     margin: 2% 5%;
     width: 90%;
     height: 96%;
-    background-color: rgba(8, 8, 8, 0.575);
+    background-color: rgba(8, 8, 8, 0.795);
     color: #0f0;
     z-index: 200;
     display: none;
@@ -531,9 +534,9 @@ button {
 }
 
 .glow {
-    -webkit-animation: glowing 1s ease-in-out infinite alternate;
-    -moz-animation: glowing 1s ease-in-out infinite alternate;
-    animation: glowing 1s ease-in-out infinite alternate;
+    -webkit-animation: glowing .4s ease-in-out infinite alternate;
+    -moz-animation: glowing .4s ease-in-out infinite alternate;
+    animation: glowing .4s ease-in-out infinite alternate;
 }
 
 @keyframes glowing {
