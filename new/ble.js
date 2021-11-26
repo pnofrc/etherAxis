@@ -91,108 +91,195 @@ function draw() {
 // }
 
 function anim() {
-    // connectButton.remove();
+    //FIRST ANIMATION
+    let t1 = 0;
+    let tVel1 = 0.005;
 
+    //SECOND ANIMATION
+    let t2 = 0;
+    //let tVel2 = 0.0025;
+    let tVel2 = 0.003;
 
+    //FIRST ANIMATION
+    let angle1 = 0;
+    let anim1Speed = 10;
 
-    background(0, 5);
+    //SECOND ANIMATION
+    let angle2 = 0;
+    let anim2Speed = 4;
 
+    //USED TO CONTROL THE RADIUS
+    let angleRad = 0;
+    let angleRadSpeed = 8;
 
-    //DEFINE EASE METHOD 
-    let e = ease.linear(t);
+    //SPACE IS ADDED TO xUp/xDown TO CENTER THE PARTICLES
+    let space = 400;
 
+    //LIBRARY P5.FUNC INSIDE THE SKETCH hierarchy AND HTML INDEX
+    let ease = new p5.Ease();
 
-    let yUp = lerp(height + 10, -10, e);
-    let yDown = lerp(0 - 10, height + 10, e)
+    let col;
 
-    let xUp = map(sin(angle), -1, 1, -30, 30);
-    let xDown = map(sin(angle), -1, 1, 30, -30);
+    function setup() {
+        createCanvas(800, 600);
+        background(0);
+        angleMode(DEGREES);
+        noStroke();
 
-    let rad = map(sin(angleRad), -1, 1, 10, 4)
+        //TIME IN MS TO CALL THE F
+        //setTimeout(myFunction, 15600);
 
+        //STORE ANY COLOR INSIDE COL, USE RGB TO BE ABLE TO USE ALPHA
+        col = color(59, 197, 196);
+    } //end of setup
 
+    function myFunction() {
+        background(255);
+        print("I am a function");
 
-    fill(col);
-    circle(width / 2, 0 + 50, rad * 3);
-    circle(width / 2, height - 50, rad * 3);
+        trigger = false;
+    } //end of my function
 
+    function draw() {
+        background(0, 15);
 
-    //CIRCLE 2 TEST 
-    //OUTER CIRCLE
-    fill(col, alpha);
-    circle(xUp + space, yUp, rad);
+        let ms = millis();
+        let sec = ms / 1000;
 
-    //CIRCLE 2 TEST 
-    //OUTER CIRCLE
-    circle(xDown + space, yDown, rad);
+        //CURRENT SEC VISIBILITY TO TIME CONDITIONALS
+        /**/
+        fill(255);
+        textSize(25);
 
+        //text("current second : " + sec, 30, 50);
 
-    //INCREMENT TIME 
-    t += tVel;
+        //textSize(35);
 
+        text("angle1 is " + angle1, 30, 100);
+        text("t1 is " + Math.round(t1), 30, 200);
 
-    //HIGHER VALUE = FASTER Y MOVEMENT  
-    angle += 5; //random(0,25);
+        text("angle2 is " + angle2, 30, 300);
+        text("t2 is " + Math.round(t2), 30, 400);
 
-    //
-    angleRad += 10;
-    if (angleRad > 3500) {
-        noLoop()
-        quest()
-    }
+        //DEFINE EASE METHOD
+        let e1 = ease.quadraticBezier(t1);
+        let e2 = ease.linear(t2);
+        /*
+        INTERESTING METHODS TO TRY
+        p5.func ease methods :
+        -quadraticOut
+        -quadraticBezier
+        -quadraticBezierStaircase
+        -cubicOut
+        -cubicInOut
+        -quarticIn
+        -cubicBezierThrough2Points
+        */
 
-    /*
-    //HIGHER VALUE LONGER ANIMATION
-    if (t > 1.501) 
-    {
-    //inner circle 
-      
-      //circle(width/2, height/2, 20)
-      
-      //ADDS A LAYER OF BALCK TO COVER THE TRAILS  
-      
-    
-      //UNCOMMENT TO STOP UPDATE 
-      //tVel=0; 
-    }
-    */
+        //LERP FROM POINT1 TO POINT2 IN e(ease method in t)
 
+        //GOING TOWARDS THE CENTRE
+        let y1 = lerp(height + 10, height / 2, e1);
+        let y2 = lerp(0 - 10, height / 2, e1);
 
-    if (yUp <= -10 || yDown > height) {
+        let x1 = map(sin(angle1), -1, 1, -30, 30);
+        let x2 = map(sin(angle1), -1, 1, 30, -30);
 
-        //use col to fade ?
-        //col=0
-        t = 0;
+        //STARTING FROM THE CENTRE OUTWARDS
+        let yUp = lerp(height / 2, -10, e2);
+        let yDown = lerp(height / 2, height + 10, e2);
 
-        background(0, 80)
+        //GREATER OR SMALLER SINE WAVE ON X AXIS
+        //TRY TO CHANGE THE LAST TWO PARAMETERS (-value, value)
+        let xUp = map(sin(angle2), -1, 1, -30, 30);
+        let xDown = map(sin(angle2), -1, 1, 30, -30);
 
-        //tVel STOP
-        //tVel=0;
+        //rad MAPS THE INCREMENT OF angleRad TO CREATE THE PULSING EFFECT
+        let rad = map(sin(angleRad), -1, 1, 10, 3.5);
 
-    }
-
-
-    //DEFINE A FADING F TO CALL AFTER ??
-    function fade() {
-
-        let fTime = 0;
-        let speed = 0.001;
-
-        if (trigger == true) {
-
-            falpha = lerp(255, 0, fTime)
-
-            if (fTime >= 1.0001) {
-
-                bacground(0, fAlpha)
-
-                fTime = 0;
-                speed = 0;
-
-            }
-
+        if (t1 > 1.001 || t2 > 1.001) {
+            t1 = 0;
+            t2 = 0;
+            background(0, 90);
         }
-    }
+
+        //ANIMATION
+        if (sec >= 0 && sec < 10) {
+            //INCREMENT TIME
+
+            t1 += tVel1;
+            angle1 += anim1Speed;
+            //HIGHER VALUE, FASTER RADIUS ANIMATION
+            angleRad += angleRadSpeed;
+
+            //ANIMATION 1 CIRCLE PROPERTIES
+            let outSize = 20;
+            let inSize = 10;
+
+            //===================================================TOP CIRCLE
+            //OUTER CIRCLE
+            fill(col, 70);
+            circle(x1 + space, y2, outSize);
+
+            //INNER CIRCLE
+            fill(0, 90);
+            circle(x1 + space, y2, inSize);
+
+            //==================================================BOTTOM CIRCLE
+            //OUTER CIRCLE
+            fill(col, 70);
+            circle(x2 + space, y1, outSize);
+
+            //INNER CIRCLE
+            fill(0, 90);
+            circle(x2 + space, y1, inSize);
+
+            if (y1 <= height / 2 || y2 >= height / 2) {
+                //=MIDDLE CIRCLE
+                //OUTER
+                fill(col);
+                circle(width / 2, height / 2, 30);
+
+                //INNER
+                fill(0);
+                circle(width / 2, height / 2, 15);
+
+                //ADDS A LAYER OF BALCK TO COVER THE TRAILS
+                background(0, 90);
+            }
+        } else if (sec >= 10 && sec <= 15.586) {
+            //tVel2 is 0 until the first animation is playing
+            t2 += tVel2;
+            angle2 += anim2Speed;
+            //HIGHER VALUE, FASTER RADIUS ANIMATION
+            angleRad += angleRadSpeed;
+
+            //COMMENT NOFILL() AND CHANGE STROKE TO FILL TO CHANGE
+            noFill();
+            stroke(col);
+            //TOP ANIMATING CIRCLE
+            circle(width / 2, 0 + 50, rad * 4);
+            //BOTTOM ANIMATING CIRCLE
+            circle(width / 2, height - 50, rad * 4);
+
+            noStroke();
+
+            //CIRCLE UP
+            fill(col);
+            circle(xUp + space, yUp, rad);
+
+            //CIRCLE DOWN
+            circle(xDown + space, yDown, rad);
+        } else if (sec >= 15.586 && sec <= 28) {
+            quest()
+                //insert function body inside here
+                //calling the function here would mean to call every content
+                //of the f 60 times a sec
+        } else {
+            //noLoop();
+        }
+    } //end of draw
+
 
 
 }
