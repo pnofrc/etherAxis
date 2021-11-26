@@ -393,3 +393,11 @@ function delLayer(e) {
     $('#' + e).fadeOut(2000);
 
 }
+
+let gyroText = document.getElementsByClassName("overGyro")
+
+let lay = 0
+gyroText.forEach(el => {
+    el.innerHTML = layers[lay]
+    lay++
+});
