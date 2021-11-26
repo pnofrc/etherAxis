@@ -339,7 +339,7 @@ button {
     display: flex;
     z-index: 0;
     object-fit: contain;
-    /* position: relative; */
+    position: absolute;
 }
 
 .some-page-wrapper {
