@@ -83,12 +83,13 @@
             
             <div class="gyro">
                     
-                <div id="gyro1" data-depth="2"><p>Discover try move let people help you do reveal the next layers</p></div>
-                <div id="gyro2" data-depth="1.5"><button onclick="$('#gyro1').fadeOut(2000)"></button></div>
-                <div id="gyro3" data-depth="1"><button onclick="$('#gyro2').fadeOut(1500)"></button></div>
-                <div id="gyro4" data-depth=".6"><button onclick="$('#gyro3').fadeOut(1000)"></button></div>
-                <div id="gyro5" data-depth=".4"><button onclick="$('#gyro4').fadeOut(200)"></button></div>
-                <button id="fakeGyro" onclick="quest()"></button>
+                <div id="gyro0" data-depth="2"></div>
+                <div id="gyro1" data-depth="1.5"><button id="1" onclick="delLayer(1)"></button></div>
+                <div id="gyro2" data-depth="1"><button id="2" onclick="delLayer(2)"></button></div>
+                <div id="gyro3" data-depth=".6"><button id="3" onclick="delLayer(3)"></button></div>
+                <div id="gyro4" data-depth=".4"><button id="4" onclick="delLayer(4)"></button></div>
+                <div id="gyroBase"><button id="fakeGyro" onclick="quest()"></button></div>
+                
             </div>
 
             <div class="objective">

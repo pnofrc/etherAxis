@@ -381,3 +381,9 @@ var parallaxInstance = new Parallax(scene, {
 document.getElementById("fakeGyro").addEventListener("click", function() {
     $("#gyro5").fadeOut(300)
 })
+
+function delLayer(e) {
+    $('#gyro' + (e - 1)).fadeOut(2000);
+    $('#' + e).fadeOut(2000);
+
+}
