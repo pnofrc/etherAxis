@@ -426,7 +426,7 @@ button {
 canvas {
     position: absolute;
     display: none;
-    z-index: 0;
+    z-index: 1;
 }
 
 #menu {
@@ -523,4 +523,19 @@ canvas {
 
 #finalBack {
     display: none;
+}
+
+.glow {
+    -webkit-animation: glowing 1s ease-in-out infinite alternate;
+    -moz-animation: glowing 1s ease-in-out infinite alternate;
+    animation: glowing 1s ease-in-out infinite alternate;
+}
+
+@keyframes glowing {
+    from {
+        box-shadow: 0 0 10px #fff, 0 0 2px #fff, 0 0 3px rgb(0, 0, 0), 0 0 20px rgb(2, 78, 171), 0 0 5px #ff3c00, 0 0 6px #e68200, 0 0 7px #2e2e2e;
+    }
+    to {
+        box-shadow: 0 0 10px #fff, 0 0 10px #ff3c00, 0 10 15px #ff290c, 0 10 10px #c17a10, 0 0 10px #d68202, 0 0 10px #e6be83, 0 0 10px #bfac8f;
+    }
 }

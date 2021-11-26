@@ -110,15 +110,21 @@ function onArchive() {
     offGyro();
 
     $("#archiveButt").addClass("clicked")
+    $("#archiveButt").removeClass("glow")
     $(".archive").fadeIn(600)
 
     Cookies.set("tool", "archive");
+
+
 }
 
 function onBle() {
-
-    offArchive();
+    $(".compass").fadeOut(1)
+    $("#compassButt").removeClass("clicked")
+    $("#bleButt").removeClass("glow")
     offCompass;
+    offArchive();
+
     offInput();
     offInput();
     offGyro();
@@ -129,6 +135,7 @@ function onBle() {
 }
 
 function onGyro() {
+    $("#gyroButt").removeClass("glow")
     offCompass();
     offBle();
     offArchive();
@@ -146,6 +153,7 @@ function onObj() {
     offInput();
     $(".objective").fadeToggle(800);
     $("#objButt").toggleClass("clicked2")
+    $("#objButt").removeClass("glow")
 
 }
 
@@ -181,12 +189,13 @@ function checkCheck() {
         offInput();
     }
     if (valueTool == "ble") {
-        onBle()
+
         offCompass()
         offArchive()
         offGyro()
         offObj();
         offInput();
+        onBle()
     }
     if (valueTool == "gyro") {
         onGyro()
@@ -243,6 +252,8 @@ function getInputValue() {
         // $(".popup").slideDown(1000);
         deleteButton()
         instructionLevel()
+        $('#' + item[currentLev] + 'Butt').addClass("glow")
+        console.log('.' + item[currentLev])
 
     } else {
         alert("That's wrong! Try again")
@@ -295,10 +306,12 @@ function instructionLevel() {
     $("#recorderLevel").fadeOut()
 }
 
-$("#recorderLevel").addEventListener("click", function() {
-    $("#uploaded").fadeOut()
-    $("#recorder").fadeIn()
-})
+if (!$("#recorderLevel").css("display", 'none')) {
+    $("#recorderLevel").addEventListener("click", function() {
+        $("#uploaded").fadeOut()
+        $("#recorder").fadeIn()
+    })
+}
 
 //ask question
 function quest() {
@@ -323,8 +336,8 @@ function answer() {
     $(".popup").slideUp(1000);
     $("#input").fadeIn(1)
     $("#button").fadeIn(1)
-    document.getElementById("popupButton").innerHTML = '';
-    showAnswer()
+        //document.getElementById("popupButton").innerHTML = '';
+    $("#objButt").addClass("glow")
     if (currentLev == 4) {
         $("#bridgecard").fadeIn(5000)
     }
@@ -338,8 +351,7 @@ function recooooooord() {
 function showAnswer() {
     let questions = Object.keys(localStorage);
     let answers = Object.values(localStorage);
-    console.log(questions)
-
+    document.getElementById("popupText").innerHTML = ''
     for (let print = 0; print < questions.length; print++) {
         document.getElementById("popupText").innerHTML +=
             `<p>${questions[print]}</p>
