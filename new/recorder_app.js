@@ -33,7 +33,7 @@ stopButton.addEventListener("click", stopRecording);
 
 function startRecording() {
     $("#stopButton").css("border", "solid")
-    $(".recorder").css("-webkit-animation", "glowing 0.5s ease-in-out infinite alternate")
+    $(".recorder").css("-webkit-animation", "glowing")
 
     console.log("recordButton clicked");
 

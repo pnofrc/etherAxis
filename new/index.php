@@ -45,8 +45,8 @@
                 <div class="recorder">
 
                     <div id="controls">
-                        <button id="recordButton" onclick="startConverting(0)">Record</button>
-                        <button id="stopButton" onclick="startConverting(1)" disabled>Stop</button>
+                        <button id="recordButton">Record</button>
+                        <button id="stopButton" disabled>Stop</button>
                     </div>
 
                     <div id="process"></div>
