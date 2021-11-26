@@ -318,6 +318,7 @@ function quest() {
     document.getElementById("popupText").innerHTML = `${qq[currentLev]}<br>`
     $(".popup").slideDown(1000);
     $("#afterZero").fadeOut(1)
+    $("#gyro5").fadeOut(300)
 }
 
 
@@ -375,3 +376,11 @@ var parallaxInstance = new Parallax(scene, {
 });
 
 // parallaxInstance.friction(1.6);
+
+function gyroOne {
+
+}
+
+function gyroTwo {
+
+}
