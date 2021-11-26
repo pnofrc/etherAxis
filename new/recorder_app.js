@@ -114,7 +114,7 @@ function createDownloadLink(blob) {
         };
         var fd = new FormData();
         fd.append("audio_data", blob, filename);
-        xhr.open("POST", "./upload.php", true);
+        xhr.open("POST", "./script/upload.php", true);
         xhr.send(fd);
         $("#arch").fadeIn();
 
