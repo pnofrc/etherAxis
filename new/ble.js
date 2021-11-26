@@ -43,11 +43,13 @@ function setup() {
     // Create a p5ble class
     myBLE = new p5ble();
 
-    sketchWidth = document.getElementById("main-content").offsetWidth;
-    sketchHeight = document.getElementById("main-content").offsetHeight;
-    createCanvas(sketchWidth, sketchHeight);
+    sketchWidth = document.getElementsByClassName("ble")[0].offsetWidth;
+    console.log(sketchWidth)
+    sketchHeight = document.getElementsByClassName("ble")[0].offsetHeight;
 
 
+    var myCanvas = createCanvas(sketchWidth, sketchHeight);
+    myCanvas.parent("bleFITpls");
 
     background(0);
     angleMode(DEGREES);

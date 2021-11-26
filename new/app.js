@@ -272,6 +272,14 @@ input.addEventListener("click", function() {
     $('input[type="text"]').val('');
 })
 
+let input2 = document.getElementById("answerInput")
+
+input2.addEventListener('keypress', function(ev) {
+    if (ev.keyCode === 13 || ev.which === 13) {
+        answer()
+    }
+});
+
 
 
 // to unblock unblocked tools

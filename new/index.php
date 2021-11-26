@@ -76,9 +76,9 @@
 
            
 
-            <div class="ble">
+            <div id="bleFITpls" class="ble">
                 <button id="connection" onclick="connectToBle()">Connect</button>
-                <!-- <canvas class="p5Canvas"></canvas> -->
+            
             </div>
             
             <div class="gyro">
