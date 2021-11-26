@@ -47,6 +47,15 @@ body {
     line-height: 20px;
 }
 
+.archive li {
+    list-style-type: none;
+}
+
+.archive a {
+    text-decoration: none;
+    border: solid;
+}
+
 .compass {
     position: relative;
     width: 320px;
