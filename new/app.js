@@ -368,9 +368,10 @@ var scene = document.getElementsByClassName('gyro')[0];
 var parallaxInstance = new Parallax(scene, {
     relativeInput: true,
     scalarX: 50,
-    scalarY: 70,
-    fictionX: 0.15,
-    frictionY: 0.075
+    scalarY: 10,
+    fictionX: 0.05,
+    frictionY: 0.075,
+    pointerEvents: true,
 });
 
-parallaxInstance.friction(1.6, 0.6);
+// parallaxInstance.friction(1.6);

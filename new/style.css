@@ -541,7 +541,8 @@ canvas {
 }
 
 #gyro1,
-#gyro2 {
+#gyro2,
+#gyro3 {
     width: 100%;
     height: 100%;
 }
@@ -549,13 +550,19 @@ canvas {
 #gyro1 {
     background-color: seagreen;
     position: relative;
-    z-index: 300;
+    z-index: 302;
 }
 
 #gyro2 {
     background-color: red;
     position: relative;
     z-index: 301;
+}
+
+#gyro3 {
+    background-color: blue;
+    position: relative;
+    z-index: 300;
 }
 
 #fakeGyro {

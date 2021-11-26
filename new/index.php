@@ -83,8 +83,9 @@
             
             <div class="gyro">
                     
-                <div id="gyro1" data-depth="0.2"></div>
-                <div id="gyro2" data-depth="0.6"></div>
+                <div id="gyro1" data-depth="2"></div>
+                <div id="gyro2" data-depth="1"><button onclick="$('#gyro1').fadeOut(2000)"></button></div>
+                <div id="gyro3" data-depth=".6"><button onclick="$('#gyro2').fadeOut(2000)"></button></div>
                 <button id="fakeGyro" onclick="quest()"></button>
             </div>
 
