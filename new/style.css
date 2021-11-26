@@ -703,9 +703,9 @@ ol {
 
 @keyframes recording {
     from {
-        border-color: 0 0 10px #fff, 0 0 2px #fff, 0 0 3px rgb(0, 0, 0), 0 0 20px rgb(2, 78, 171), 0 0 5px #ff3c00, 0 0 6px #e68200, 0 0 7px #2e2e2e;
+        box-shadow: 0 0 10px #fff, 0 0 2px #fff, 0 0 3px rgb(156, 133, 133), 0 0 20px rgb(144, 114, 145), 0 0 5px #69615f, 0 0 6px #ffffff, 0 0 7px #8a5c5c;
     }
     to {
-        border-color: 0 0 10px #fff, 0 0 10px #ff3c00, 0 10 15px #ff290c, 0 10 10px #c17a10, 0 0 10px #d68202, 0 0 10px #e6be83, 0 0 10px #bfac8f;
+        box-shadow: 0 0 10px rgb(148, 74, 74), 0 0 10px #ff3c00, 0 10 15px #ff290c, 0 10 10px #c11010, 0 0 10px #d62c02, 0 0 10px #d13607, 0 0 10px #ff0000;
     }
 }
