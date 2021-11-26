@@ -66,12 +66,13 @@ function setup() {
 }
 
 function connectToBle() {
-    $("canvas").fadeIn(600);
-    // Connect to a device by passing the service UUID
+    document.getElementById("connection").remove()
+        // Connect to a device by passing the service UUID
 
     // myBLE.connect(serviceUuid, gotCharacteristics);
     myValue = 1
-    document.getElementById("connection").remove()
+    $("canvas").fadeIn(600);
+
 }
 
 // A function that will be called once got characteristics

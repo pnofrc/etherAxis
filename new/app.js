@@ -128,7 +128,7 @@ function onBle() {
     offInput();
     offInput();
     offGyro();
-    $(".ble").fadeIn(600);
+    $(".ble").fadeIn();
     $("#bleButt").addClass("clicked")
 
     Cookies.set("tool", "ble");
