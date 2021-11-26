@@ -114,17 +114,17 @@ function anim() {
     //CURRENT SEC VISIBILITY TO TIME CONDITIONALS
     /**/
     fill(255);
-    textSize(25);
+    // textSize(25);
 
-    //text("current second : " + sec, 30, 50);
+    // //text("current second : " + sec, 30, 50);
 
-    //textSize(35);
+    // //textSize(35);
 
-    text("angle1 is " + angle1, 30, 100);
-    text("t1 is " + Math.round(t1), 30, 200);
+    // text("angle1 is " + angle1, 30, 100);
+    // text("t1 is " + Math.round(t1), 30, 200);
 
-    text("angle2 is " + angle2, 30, 300);
-    text("t2 is " + Math.round(t2), 30, 400);
+    // text("angle2 is " + angle2, 30, 300);
+    // text("t2 is " + Math.round(t2), 30, 400);
 
     //DEFINE EASE METHOD
     let e1 = ease.quadraticBezier(t1);
