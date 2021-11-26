@@ -323,6 +323,8 @@ button {
     border-width: 1.5px;
     border-style: solid;
     border-radius: 4px;
+    position: relative;
+    z-index: 100;
 }
 
 #main-content {
@@ -364,6 +366,8 @@ button {
     border-width: 1.5px;
     border-style: solid;
     border-radius: 4px;
+    z-index: 299;
+    position: relative;
 }
 
 .code-input {
@@ -542,7 +546,9 @@ canvas {
 
 #gyro1,
 #gyro2,
-#gyro3 {
+#gyro3,
+#gyro4,
+#gyro5 {
     width: 100%;
     height: 100%;
 }
@@ -550,17 +556,29 @@ canvas {
 #gyro1 {
     background-color: seagreen;
     position: relative;
-    z-index: 302;
+    z-index: 305;
 }
 
 #gyro2 {
     background-color: red;
     position: relative;
-    z-index: 301;
+    z-index: 304;
 }
 
 #gyro3 {
     background-color: blue;
+    position: relative;
+    z-index: 303;
+}
+
+#gyro4 {
+    background-color: yellow;
+    position: relative;
+    z-index: 302;
+}
+
+#gyro5 {
+    background-color: black;
     position: relative;
     z-index: 300;
 }
@@ -570,4 +588,9 @@ canvas {
     height: 20%;
     margin-left: 25%;
     margin-top: 40%;
+}
+
+.menuButt {
+    position: relative;
+    z-index: 299
 }
