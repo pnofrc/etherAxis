@@ -376,11 +376,3 @@ var parallaxInstance = new Parallax(scene, {
 });
 
 // parallaxInstance.friction(1.6);
-
-function gyroOne {
-
-}
-
-function gyroTwo {
-
-}
