@@ -40,7 +40,7 @@ function startRecording() {
     stopButton.disabled = false;
 
     navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
-        console.log("getUserMedia() success, stream created, initializing Recorder.js ...");
+        // console.log("getUserMedia() success, stream created, initializing Recorder.js ...");
 
         audioContext = new AudioContext();
 

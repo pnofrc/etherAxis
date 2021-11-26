@@ -98,7 +98,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     transition: transform 0.1s ease-out;
-    background: url(./assets/compass2.png) center no-repeat;
+    background: url(./assets/compass.png) center no-repeat;
     background-size: contain;
 }
 
@@ -669,7 +669,12 @@ ol {
 }
 
 .icon {
-    width: 100%;
+    width: 80%;
+}
+
+#iconCompass {
+    width: 65%;
+    transform: rotate(15deg);
 }
 
 :disabled {

@@ -4,17 +4,17 @@
 
 <head>
     <meta charset="utf-8">
-    <title>etherAxis layout</title>
+    <title>📡⚗️🔐🔍</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <script src="../script/cookie.js"></script>
-    <script src="../script/jquery-3.6.0.min.js"></script>
-    <script src="../script/p5.min.js"></script>
-    <script src="../script/p5.dom.min.js"></script>
-    <script src="../script/p5.ble.js"></script>
-    <script src="../script/recorder.js"></script>
-    <script src="p5.func.min.js"></script>
+    <script src="./script/cookie.js"></script>
+    <script src="./script/jquery-3.6.0.min.js"></script>
+    <script src="./script/p5.min.js"></script>
+    <script src="./script/p5.dom.min.js"></script>
+    <script src="./script/p5.ble.js"></script>
+    <script src="./script/recorder.js"></script>
+    <script src="./script/p5.func.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 
 </head>
@@ -65,7 +65,7 @@
                         foreach ($fs as $fileCurr) {
                             $filePath = $fileCurr;
                             $date = date("F d Y", fileatime($fileCurr));
-                            echo "<span><a href='../ether_archive/$filePath' title='$filecurr'>$fileCurr</a></span><br><span>$date</span><hr>";
+                            echo "<span><a href='./ether_archive/$filePath' title='$filecurr'>$fileCurr</a></span><br><span>$date</span><hr>";
                         }  
                         
                         ?>
@@ -119,19 +119,19 @@
             </div>
             <div class='column'>
                 <div class='tool'>
-                    <button class="menuButt" id="compassButt" onclick="onCompass()"><img class="icon" src="./assets/compas.png"></button>
+                    <button class="menuButt" id="compassButt" onclick="onCompass()"><img class="icon" id="iconCompass" src="./assets/compass.png"></button>
                 </div>
             </div>
             <div class='column'>
                 <div class='tool'>
-                    <button class="menuButt" id="archiveButt" onclick="onArchive()"><img class="icon" src="./assets/compas.png"></button>
+                    <button class="menuButt" id="archiveButt" onclick="onArchive()"><img class="icon" id="iconArchive" src="./assets/compas.png"></button>
                 </div>
             </div>
         </div>
         <div class='row'>
             <div class='column'>
                 <div class='tool'>
-                    <button class="gameButt" id="inputButt" onclick="onInput()"><img class="icon" src="./assets/compas.png"></button>
+                    <button class="gameButt" id="inputButt" onclick="onInput()"><img class="icon"  src="./assets/compas.png"></button>
                 </div>
             </div>
             <div class='column'>
@@ -141,7 +141,7 @@
             </div>
             <div class='column'>
                 <div class='tool'>
-                    <button class="menuButt" id="gyroButt" onclick="onGyro()"><img class="icon" src="./assets/compas.png"></button>
+                    <button class="menuButt" id="gyroButt" onclick="onGyro()"><img class="icon" id="iconGyro" src="./assets/compas.png"></button>
                 </div>
             </div>
 
@@ -159,7 +159,7 @@
     </script>
     <script src="https://hub.xpub.nl/etheraxis/pad/p/dictio/export/txt"></script>
     <script src="app.js"></script>
-    <script src="compass_app.js" ></script>
+    <script src="./compass_app.js" ></script>
     <script src="./recorder_app.js"></script>
     <script src="./ble.js" ></script>
 

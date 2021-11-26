@@ -5,6 +5,10 @@ $("#gyroButt").prop('disabled', true)
 $("#archiveButt").prop('disabled', true)
 $("#bleButt").prop('disabled', true)
 
+$("#iconBle").attr("src", "")
+$("#iconArchive").attr("src", "")
+$("#iconGyro").attr("src", "")
+
 // let's wrap the cookies check
 let cookie = Cookies.get();
 let current = Object.keys(cookie);
@@ -284,18 +288,18 @@ input2.addEventListener('keypress', function(ev) {
 
 // to unblock unblocked tools
 function checkItem() {
-    console.log('si')
+    // console.log('si')
     if (Cookies.get('gyro')) {
         $("#gyroButt").prop('disabled', false)
+        $("#iconGyro").attr("src", "./assets/gyro.png")
     } else {}
     if (Cookies.get("archive")) {
         $("#archiveButt").prop('disabled', false)
-
+        $("#iconArchive").attr("src", "./assets/archive.png")
     } else {}
     if (Cookies.get("ble")) {
-
         $("#bleButt").prop('disabled', false)
-
+        $("#iconBle").attr("src", "./assets/ble.png")
     } else {}
 }
 
