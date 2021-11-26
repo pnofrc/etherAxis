@@ -135,6 +135,9 @@ function onBle() {
 }
 
 function onGyro() {
+    if (currentLev > 1) {
+        $(".overGyro").css("display", "none")
+    }
     $("#gyroButt").removeClass("glow")
     offCompass();
     offBle();

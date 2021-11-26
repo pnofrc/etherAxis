@@ -83,11 +83,12 @@
             
             <div class="gyro">
                     
-                <div id="gyro0" data-depth="2"></div>
-                <div id="gyro1" data-depth="1.5"><button id="1" onclick="delLayer(1)"></button></div>
-                <div id="gyro2" data-depth="1"><button id="2" onclick="delLayer(2)"></button></div>
-                <div id="gyro3" data-depth=".6"><button id="3" onclick="delLayer(3)"></button></div>
-                <div id="gyro4" data-depth=".4"><button id="4" onclick="delLayer(4)"></button></div>
+                <div class="overGyro" id="gyro0" data-depth="2"></div>
+                <div class="overGyro" id="gyro1" data-depth="1.5"><button id="1" onclick="delLayer(1)"></button></div>
+                <div class="overGyro" id="gyro2" data-depth="1"><button id="2" onclick="delLayer(2)"></button></div>
+                <div class="overGyro" id="gyro3" data-depth=".6"><button id="3" onclick="delLayer(3)"></button></div>
+                <div class="overGyro" id="gyro4" data-depth=".4"><button id="4" onclick="delLayer(4)"></button></div>
+                <p></p>
                 <button id="fakeGyro" onclick="quest()"></button>
                 
             </div>
