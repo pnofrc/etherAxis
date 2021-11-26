@@ -359,6 +359,7 @@ function showAnswer() {
             <i>${answers[print]}</i><br>`
     }
     $("#finalBack").fadeIn(1)
+    $("input").fadeOut(1)
     $("#adelante").fadeOut(1)
     $(".popup").fadeIn(2000)
 }

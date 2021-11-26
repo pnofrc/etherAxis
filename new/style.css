@@ -471,6 +471,7 @@ canvas {
     color: #0f0;
     z-index: 200;
     display: none;
+    overflow-y: scroll;
 }
 
 .popupButton {
