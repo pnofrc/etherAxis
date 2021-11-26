@@ -393,7 +393,7 @@ var parallaxInstance = new Parallax(scene, {
 // parallaxInstance.friction(1.6);
 
 document.getElementById("fakeGyro").addEventListener("click", function() {
-    $("#gyro5").fadeOut(300)
+    $("#gyro4").fadeOut(300)
 })
 
 function delLayer(e) {
