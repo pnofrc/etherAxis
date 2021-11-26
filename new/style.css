@@ -613,12 +613,27 @@ canvas {
 
 #b2 {
     background-color: black;
+    width: 5%;
+    height: 40%;
+    position: absolute;
+    left: 10%;
+    bottom: 30%
 }
 
 #b3 {
     background-color: black;
+    width: 40%;
+    height: 5%;
+    position: absolute;
+    right: 10%;
+    bottom: 1%;
 }
 
 #b4 {
     background-color: black;
+    width: 15%;
+    height: 30%;
+    position: absolute;
+    right: 5%;
+    bottom: 5%
 }
