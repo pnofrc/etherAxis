@@ -20,7 +20,8 @@ let angleRad = 0;
 let angleRadSpeed = 8;
 
 //SPACE IS ADDED TO xUp/xDown TO CENTER THE PARTICLES
-let space = 400;
+let width = document.getElementsByClassName("ble")[0].offsetWidth;
+let space = width / 2
 
 //LIBRARY P5.FUNC INSIDE THE SKETCH hierarchy AND HTML INDEX
 let ease = new p5.Ease();

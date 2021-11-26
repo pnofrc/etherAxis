@@ -415,3 +415,16 @@ gyroText.forEach(el => {
     el.innerHTML += layers[lay]
     lay++
 });
+
+let icons = document.getElementsByClassName("icon")
+
+icons.forEach(icon => {
+    console.log(icon.disabled)
+    if (icon.disabled) {
+        icon.src = ""
+    } else {
+        // alert()
+    }
+});
+
+let aaa = document.getElementById("iconBle")

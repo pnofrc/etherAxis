@@ -38,7 +38,7 @@ body {
 .archive {
     width: 100%;
     height: 100%;
-    border: solid;
+    /* border: solid; */
     overflow-y: scroll;
 }
 
@@ -48,12 +48,21 @@ body {
 }
 
 .archive li {
+    margin-top: 10px;
     list-style-type: none;
+    line-height: 14px;
 }
 
 .archive a {
-    text-decoration: none;
-    border: solid;
+    /* text-decoration: none; */
+    /* border: solid; */
+    font-size: 20px;
+    color: var(--lava);
+}
+
+.archive audio {
+    width: 80%;
+    /* margin-left: 10%; */
 }
 
 .compass {
@@ -89,7 +98,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     transition: transform 0.1s ease-out;
-    background: url(../assets/compas.png) center no-repeat;
+    background: url(./assets/compass2.png) center no-repeat;
     background-size: contain;
 }
 
@@ -532,10 +541,10 @@ button {
 }
 
 #arch {
-    position: absolute;
+    position: relative;
     bottom: 5vw;
-    width: 50%;
-    left: 25%;
+    /* width: 50%;
+    margin-left: 25%; */
     height: 10%;
     display: none;
 }
@@ -653,4 +662,18 @@ canvas {
     bottom: 10%;
     left: 70%;
     display: none;
+}
+
+ol {
+    padding: 0;
+}
+
+.icon {
+    width: 100%;
+}
+
+:disabled {
+    background: url(./assets/locked.png) center no-repeat;
+    background-size: 50%;
+    z-index: 900;
 }

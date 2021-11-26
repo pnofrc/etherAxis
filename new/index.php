@@ -54,7 +54,7 @@
 
                     <br><br>
 
-                    <button id="arch" onclick=next()>to Archive</button>
+                    <button id="arch" onclick=next()>Go to Archive</button>
 
                 </div>
 
@@ -69,7 +69,7 @@
                         }  
                         
                         ?>
-                    <button onclick="back()">back to recorder</button>
+                    <button onclick="back()">Back to Recorder</button>
                     <button id="recorderLevel" onclick="recooooooord()" >Finish level</button>
                 </div>
             </div>
@@ -114,34 +114,34 @@
         <div class='row'>
             <div class='column'>
                 <div class='tool'>
-                    <button class="gameButt" id="objButt" onclick="onObj()">1</button>
+                    <button class="gameButt" id="objButt" onclick="onObj()"><img class="icon" src="./assets/compas.png"></button>
                 </div>
             </div>
             <div class='column'>
                 <div class='tool'>
-                    <button class="menuButt" id="compassButt" onclick="onCompass()">2</button>
+                    <button class="menuButt" id="compassButt" onclick="onCompass()"><img class="icon" src="./assets/compas.png"></button>
                 </div>
             </div>
             <div class='column'>
                 <div class='tool'>
-                    <button class="menuButt" id="archiveButt" onclick="onArchive()">3</button>
+                    <button class="menuButt" id="archiveButt" onclick="onArchive()"><img class="icon" src="./assets/compas.png"></button>
                 </div>
             </div>
         </div>
         <div class='row'>
             <div class='column'>
                 <div class='tool'>
-                    <button class="gameButt" id="inputButt" onclick="onInput()">4</button>
+                    <button class="gameButt" id="inputButt" onclick="onInput()"><img class="icon" src="./assets/compas.png"></button>
                 </div>
             </div>
             <div class='column'>
                 <div class='tool'>
-                    <button class="menuButt" id="bleButt" onclick="onBle()">5</button>
+                    <button class="menuButt" id="bleButt" onclick="onBle()"><img class="icon" id="iconBle" src="./assets/compas.png"></button>
                 </div>
             </div>
             <div class='column'>
                 <div class='tool'>
-                    <button class="menuButt" id="gyroButt" onclick="onGyro()">6</button>
+                    <button class="menuButt" id="gyroButt" onclick="onGyro()"><img class="icon" src="./assets/compas.png"></button>
                 </div>
             </div>
 
