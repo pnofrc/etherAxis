@@ -683,9 +683,12 @@ ol {
     z-index: 900;
 }
 
-#recordButton {}
+#recordButton {
+    background-color: var(--lava);
+}
+
+#recordButton:disabled {}
 
 #stopButton:disabled {
     background: none;
-    background-color: var(--lava);
 }
