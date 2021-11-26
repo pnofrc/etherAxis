@@ -176,6 +176,9 @@ function onInput() {
 
 //check at what point u are and routing
 function checkCheck() {
+    if (currentLev > 1) {
+        $(".overGyro").css("display", "none")
+    }
 
     let valueTool = Cookies.get("tool");
     if (valueTool == "compass") {
