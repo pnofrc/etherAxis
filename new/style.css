@@ -212,7 +212,7 @@ ul {
 }
 
 #connection {
-    position: absolute;
+    /* position: absolute; */
     margin-left: 30%;
     margin-top: 40%;
     z-index: 5;
