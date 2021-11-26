@@ -271,10 +271,10 @@ function anim() {
             //CIRCLE DOWN
             circle(xDown + space, yDown, rad);
         } else if (sec >= 15.586 && sec <= 28) {
-            quest()
-                //insert function body inside here
-                //calling the function here would mean to call every content
-                //of the f 60 times a sec
+            // quest()
+            //insert function body inside here
+            //calling the function here would mean to call every content
+            //of the f 60 times a sec
         } else {
             //noLoop();
         }
