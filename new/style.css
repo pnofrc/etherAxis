@@ -334,10 +334,12 @@ button {
     border-radius: 10px;
     text-align: center;
     height: 100%;
+    width: 100%;
     font-size: 2em;
     display: flex;
     z-index: 0;
     object-fit: contain;
+    /* position: relative; */
 }
 
 .some-page-wrapper {
@@ -429,12 +431,6 @@ button {
     display: none;
     width: 100%;
     height: 100%;
-}
-
-canvas {
-    position: absolute;
-    display: none;
-    z-index: 1;
 }
 
 #menu {
@@ -598,4 +594,15 @@ canvas {
 .menuButt {
     position: relative;
     z-index: 299
+}
+
+canvas {
+    position: absolute;
+    display: none;
+    z-index: 100;
+}
+
+#defaultCanvas0 {
+    position: absolute;
+    z-index: 100;
 }
