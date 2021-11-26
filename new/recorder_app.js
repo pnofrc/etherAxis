@@ -32,7 +32,7 @@ recordButton.addEventListener("click", startRecording);
 stopButton.addEventListener("click", stopRecording);
 
 function startRecording() {
-    $("#stopButton").css("border", "solid red 2px")
+    $("#stopButton").css("border", "solid")
     $(".recorder").css("-webkit-animation", "glowing 0.5s ease-in-out infinite alternate")
 
     console.log("recordButton clicked");
