@@ -20,6 +20,9 @@
 </head>
 
 <body>
+
+<div id="back"></div>
+
 <div class="popup">
 <div id="popupText"></div>
 <!-- <div id="popupButton"></div> -->
@@ -114,7 +117,7 @@
         <div class='row'>
             <div class='column'>
                 <div class='tool'>
-                    <button class="gameButt" id="objButt" onclick="onObj()"><img class="icon" src="./assets/compas.png"></button>
+                    <button class="gameButt" id="objButt" onclick="onObj()"><img class="icon" id="iconObj" src="./assets/obj.png"></button>
                 </div>
             </div>
             <div class='column'>
@@ -131,7 +134,7 @@
         <div class='row'>
             <div class='column'>
                 <div class='tool'>
-                    <button class="gameButt" id="inputButt" onclick="onInput()"><img class="icon"  src="./assets/input.png"></button>
+                    <button class="gameButt" id="inputButt" onclick="onInput()"><img class="icon"  id="iconInput" src="./assets/input.png"></button>
                 </div>
             </div>
             <div class='column'>
