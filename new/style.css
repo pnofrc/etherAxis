@@ -361,7 +361,7 @@ button {
 
 #main-content {
     background-color: rgb(219, 223, 219);
-    border-radius: 10px;
+    /* border-radius: 10px; */
     text-align: center;
     height: 100%;
     width: 100%;
