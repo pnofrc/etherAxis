@@ -27,7 +27,7 @@
 <div id="popupText"></div>
 <!-- <div id="popupButton"></div> -->
 <div><input type="text" placeholder="Enter your answer " value="" id="answerInput">
-<button onclick="answer()" id="adelante">Continue</button></div>
+<button onclick="answer()" id="adelante">Give Answer</button></div>
 <button onclick="$('.popup').slideUp(3000)" id="finalBack">Back</button></div>
 </div>
 
