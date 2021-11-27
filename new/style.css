@@ -253,7 +253,6 @@ ul {
 /*louisa*/
 
 body {
-    background-color: var(--sand);
     max-width: 90ch;
     color: var(--midnight);
 }
@@ -295,7 +294,7 @@ input[type=text] {
 /*louisa layout*/
 
 button {
-    background-color: rgb(219, 223, 219);
+    background-color: var(--sand);
     color: var(--void);
     padding: 5px 10px;
     text-align: center;
@@ -360,7 +359,7 @@ button {
 }
 
 #main-content {
-    background-color: rgb(219, 223, 219);
+    background-color: var(--sand);
     /* border-radius: 10px; */
     text-align: center;
     height: 100%;
@@ -392,7 +391,7 @@ button {
 }
 
 .tool {
-    background-color: rgb(219, 223, 219);
+    background-color: var(--sand);
     border-radius: 10px;
     height: 100px;
     margin: 5px 5px;
