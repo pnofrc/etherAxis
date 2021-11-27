@@ -253,7 +253,7 @@ ul {
 /*louisa*/
 
 body {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--sand);
     max-width: 90ch;
     color: var(--midnight);
 }
