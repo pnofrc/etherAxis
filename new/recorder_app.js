@@ -87,8 +87,8 @@ function stopRecording() {
 function createDownloadLink(blob) {
     var url = URL.createObjectURL(blob);
     var au = document.createElement('audio');
+    var br = document.createElement('br');
     var li = document.createElement('li');
-    var link = document.createElement('a');
 
     //name of .wav file to use during upload and download (without extendion)
     var filename = new Date().toISOString();
@@ -120,7 +120,7 @@ function createDownloadLink(blob) {
 
     })
     li.appendChild(document.createTextNode(" ")) //add a space in between
-    li.text += "<br>"
+    li.appendChild(br);
     li.appendChild(upload) //add the upload link to li
 
     //add the li element to the ol
