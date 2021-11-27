@@ -347,14 +347,14 @@ button {
 
 #main {
     height: 50vh;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     text-align: center;
     margin: 10px;
     margin-bottom: 5px;
     border-color: rgba(132, 138, 132, 0.864);
     border-width: 1.5px;
     border-style: solid;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     position: relative;
     z-index: 100;
 }
