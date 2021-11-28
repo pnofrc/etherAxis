@@ -31,12 +31,12 @@ if (len > 0) {
 
 // delete buttons not necessary in current level
 function deleteButton() {
-    if (currentLev == 1) {
-        console.log(currentLev)
-        $("#fakeGyro").fadeIn(1)
-    } else {
-        $("#fakeGyro").fadeOut(1)
-    }
+    // if (currentLev == 1) {
+    //     console.log(currentLev)
+    //     $("#fakeGyro").fadeIn(1)
+    // } else {
+    $("#fakeGyro").fadeOut(1)
+        // }
     if (currentLev == 2) {
         $("#recorderLevel").fadeIn(1)
     } else {
@@ -408,8 +408,6 @@ function delLayer(e) {
     }
 
     $('#b' + (e + 1)).fadeIn(4000);
-
-
 }
 
 let gyroText = document.getElementsByClassName("overGyro")
