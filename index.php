@@ -90,7 +90,7 @@
                 <div class="overGyro" id="gyro2" data-depth="1"><button id="b2" onclick="delLayer(2)"></button><br><p class="textGyro"></p></div>
                 <div class="overGyro" id="gyro3" data-depth=".6"><button id="b3" onclick="delLayer(3)"></button><br><p class="textGyro"></p></div>
                 <div class="overGyro" id="gyro4" data-depth=".4"><button id="b4" onclick="delLayer(4)"></button><br><p class="textGyro"></p></div>
-                <p class="textGyro">   Colours<br>
+                <p class="textAllGyro">   Colours<br>
     Shapes<br>
     Time<br>
     Electricity<br>

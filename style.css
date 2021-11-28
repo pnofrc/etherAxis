@@ -735,5 +735,10 @@ ol {
 }
 
 .textGyro {
+    color: white;
+}
+
+.textAllGyro {
     display: none;
+    color: var(--lava);
 }
