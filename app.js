@@ -133,6 +133,7 @@ function onBle() {
     offInput();
     offGyro();
     $(".ble").fadeIn();
+    $("#connection").fadeIn();
     $("#bleButt").addClass("clicked")
 
     Cookies.set("tool", "ble");
@@ -142,6 +143,7 @@ function onGyro() {
     if (currentLev > 1) {
         $(".overGyro").css("display", "none")
     }
+
     $("#gyroButt").removeClass("glow")
     offCompass();
     offBle();

@@ -67,12 +67,12 @@ function setup() {
 }
 
 function connectToBle() {
-    document.getElementById("connection").remove()
-        // Connect to a device by passing the service UUID
+
+    // Connect to a device by passing the service UUID
 
     myBLE.connect(serviceUuid, gotCharacteristics);
     // myValue = 1
-    $("canvas").fadeIn(600);
+
 
 }
 
@@ -106,6 +106,8 @@ function myFunction() {
 
 function draw() {
     if (myValue == 1) {
+        // document.getElementById("connection").remove()
+        $("canvas").fadeIn(600);
         anim()
     }
 }
