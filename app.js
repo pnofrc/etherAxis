@@ -383,6 +383,8 @@ function showAnswer() {
     $("input").fadeOut(1)
     $("#adelante").fadeOut(1)
     $(".popup").fadeIn(2000)
+    $("#bridgecard").fadeIn(2000)
+
 }
 
 
