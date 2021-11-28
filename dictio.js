@@ -56,7 +56,7 @@ var quests = [
 ]
 
 var rid = [
-    'Sensor! The bridge point to your realm is hidden in a see of lights, people seek it to change their perception. In between flashing lights of many colours, you see a rotating text in a window display. What is the word that is written on it?',
+    'Sensor! The bridge point to your realm is hidden in a see of lights, people seek it to change their perception. In between flashing lights of many colours, you see a handwritten note in a window display. What is the word that is written on it?',
     'Sychronizer! Follow the metal fence alongside the contruction site. Right at its end, you see a red and white barrier. Go beyond it and around the building to reach the bridge point. Do you see the two yellow poles in front of the garage doors? Dare to lift the metal to its feet to pull out a little camouflaged container. The codeword is inside. Put it back as you found it after.',
     'Energizer! The bridge point to your realm is protected by a hooded creature standing in wet matter. Close by, you will find a black metal fence. The codeword is inside a tiny magnetic capsule next to one of its screws. Put it back as you found it after.',
     'Transmitter! The bridge point to your realm is centered around a big tree on a crossing. At its feet, there is a luscious polypore fungus. Draw a line from this tree to the closest fence in your mind. This is where you will find a tiny magnetic container hidden next to a screw. The codeword is inside. Put it back as you found it after.',
