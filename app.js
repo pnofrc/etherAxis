@@ -404,7 +404,7 @@ function delLayer(e) {
     $('#gyro' + (e - 1)).fadeOut(2000);
     $('#b' + e).fadeOut(2000);
     if (e == 4) {
-        $(".fakeGyro").fadeIn(4000)
+        $("#fakeGyro").fadeIn(4000)
     }
 
     $('#b' + (e + 1)).fadeIn(4000);
