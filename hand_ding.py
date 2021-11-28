@@ -46,7 +46,7 @@ def main():
         time.sleep(1)
 
         lcd_text("Connect to",LCD_LINE_1)
-        lcd_text("http://etheraxis.xyz",LCD_LINE_2)
+        lcd_text("etheraxis.xyz",LCD_LINE_2)
 
         time.sleep(4)
 
