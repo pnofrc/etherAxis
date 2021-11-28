@@ -69,7 +69,7 @@ function setup() {
 function connectToBle() {
 
     // Connect to a device by passing the service UUID
-
+    $("canvas").fadeIn(600);
     // myBLE.connect(serviceUuid, gotCharacteristics);
     myValue = 1
 
@@ -107,7 +107,7 @@ function myFunction() {
 function draw() {
     if (myValue == 1) {
         // document.getElementById("connection").remove()
-        $("canvas").fadeIn(600);
+
         anim()
     }
 }
@@ -246,6 +246,7 @@ function anim() {
         circle(xDown + space, yDown, rad);
     } else if (sec >= 15.586 && sec <= 28) {
         quest()
+        noLoop()
             //insert function body inside here
             //calling the function here would mean to call every content
             //of the f 60 times a sec
