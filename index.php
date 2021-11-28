@@ -162,10 +162,9 @@
     </script>
     <script src="https://hub.xpub.nl/etheraxis/pad/p/dictio/export/txt"></script>
     <script src="app.js"></script>
-    <script src="./compass_app.js" ></script>
     <script src="./recorder_app.js"></script>
     <script src="./ble.js" ></script>
-
+    <script src="./compass_app.js" ></script>
 
     <!-- <script src="dictio.js" ></script> -->
 
