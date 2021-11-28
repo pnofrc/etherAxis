@@ -410,6 +410,7 @@ function delLayer(e) {
     $('#b' + e).fadeOut(2000);
     if (e == 4) {
         $("#fakeGyro").fadeIn(4000)
+        $(".textGyro").fadeIn(4000)
     }
 
     $('#b' + (e + 1)).fadeIn(4000);

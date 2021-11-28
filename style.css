@@ -733,3 +733,7 @@ ol {
     padding: 20px;
     font-size: 28px;
 }
+
+.textGyro {
+    display: none;
+}
