@@ -238,7 +238,7 @@ function checkButton() {
     if (currentLev == 4) {
         $("input").css("display", "none");
         $("#button").css("display", "none");
-        $("#bridgecard").fadeIn(5000)
+        // $("#bridgecard").fadeIn(5000)
     }
 
     document.getElementById("textRiddle").innerHTML = rid[currentLev];
@@ -360,9 +360,7 @@ function answer() {
     $("#button").fadeIn(1)
         //document.getElementById("popupButton").innerHTML = '';
     $("#objButt").addClass("glow")
-    if (currentLev == 4) {
-        $("#bridgecard").fadeIn(5000)
-    }
+
 }
 
 function recooooooord() {
@@ -376,15 +374,28 @@ function showAnswer() {
     document.getElementById("popupText").innerHTML = ''
     for (let print = 0; print < questions.length; print++) {
         document.getElementById("popupText").innerHTML +=
-            `<p>${questions[print]}</p>
-            <i>${answers[print]}</i><br>`
+            `<p class="que">${questions[print]}</p>
+            <i class="ans">${answers[print]}</i><br>`
     }
     $("#finalBack").fadeIn(1)
     $("input").fadeOut(1)
     $("#adelante").fadeOut(1)
-    $(".popup").fadeIn(2000)
-    $("#bridgecard").fadeIn(2000)
 
+    $("input").css("display", "none");
+    $("#button").css("display", "none");
+    $("#finalBack").css("display", "block");
+    $(".popup").fadeIn(2000)
+
+
+    // $("#bridgecard").fadeIn(2000)
+
+}
+
+function seeAnswer() {
+    $('.popup').fadeOut(500)
+    $('#finalBack').slideUp(2000)
+    $("input").fadeIn(2000)
+    $("#button").fadeIn(2000)
 }
 
 

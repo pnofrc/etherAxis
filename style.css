@@ -457,7 +457,10 @@ button {
     text-align: center;
     font-size: 1.2em;
     border: saddlebrown;
-    display: none;
+    position: absolute;
+    height: 5%;
+    /* z-index: 20; */
+    /* display: none; */
 }
 
 .ble {
@@ -741,4 +744,12 @@ ol {
 .textAllGyro {
     display: none;
     color: var(--lava);
+}
+
+.que {
+    font-size: 18px;
+}
+
+.ans {
+    font-size: 27px;
 }
