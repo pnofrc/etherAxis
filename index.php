@@ -64,10 +64,10 @@
                 <div class="uploaded">
                     <?php 
                         error_reporting(0);
-                        $fs = preg_grep('/^([^.])/', scandir('./ether_archive')); 
+                        $fs = preg_grep('/^([^.])/', scandir('ether_archive')); 
                         foreach ($fs as $fileCurr) {
                             $filePath = $fileCurr;
-                            $date = date("F d Y", fileatime($fileCurr));
+                            // $date = date("F d Y", fileatime($fileCurr));
                             echo "<span><a href='./ether_archive/$filePath' title='$filecurr'>$fileCurr</a></span><hr>";
                         }  
                         
