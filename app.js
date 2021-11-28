@@ -140,6 +140,7 @@ function onBle() {
 }
 
 function onGyro() {
+    window.location.reload()
     if (currentLev > 1) {
         $(".overGyro").css("display", "none")
     }
