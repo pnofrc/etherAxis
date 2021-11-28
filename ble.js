@@ -70,8 +70,8 @@ function connectToBle() {
 
     // Connect to a device by passing the service UUID
 
-    myBLE.connect(serviceUuid, gotCharacteristics);
-    // myValue = 1
+    // myBLE.connect(serviceUuid, gotCharacteristics);
+    myValue = 1
 
 
 }
